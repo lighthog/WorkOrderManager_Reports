@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="AceWOMDataSource">
+      <rd:DataSourceID>8cd72a19-a9a8-4354-b4c8-f2cdc51f09ee</rd:DataSourceID>
+      <DataSourceReference>AceWOMDataSource</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="EquipmentID">
+      <DataType>String</DataType>
+      <Prompt>EquipmentID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PreInspection">
+      <DataType>Boolean</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>false</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>PreInspection</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.0625in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:ReportID>187ea4bb-bd96-4583-bd0f-ef769e996b41</rd:ReportID>
+  <DataSets>
+    <DataSet Name="InspectionReportComponents">
+      <Fields>
+        <Field Name="EquipmentID">
+          <DataField>EquipmentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ComponentName">
+          <DataField>ComponentName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ComponentDescription">
+          <DataField>ComponentDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Ordinal">
+          <DataField>Ordinal</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="No">
+          <DataField>No</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Item">
+          <DataField>Item</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Category">
+          <DataField>Category</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Condition">
+          <DataField>Condition</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InspectionComponentID">
+          <DataField>InspectionComponentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ComponentPointDataID">
+          <DataField>ComponentPointDataID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ActionRequired">
+          <DataField>ActionRequired</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InspectionEquipmentID">
+          <DataField>InspectionEquipmentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT        EquipmentID, ComponentName, ComponentDescription, Ordinal, No, Item, Category, Condition, InspectionComponentID, ComponentPointDataID, 
+                         ActionRequired, InspectionEquipmentID
+FROM            InspectionReportComponentFrequent
+WHERE        (InspectionEquipmentID = @EquipmentID)
+ORDER BY InspectionComponentID</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@EquipmentID">
+            <Value>=Parameters!EquipmentID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>8in</Width>
+  <Body>
+    <ReportItems>
+      <List Name="list3">
+        <NoRows>No Monorails, Trolleys, or Push-Button/Remotes on this inspection.</NoRows>
+        <ZIndex>3</ZIndex>
+        <Left>5.375in</Left>
+        <DataSetName>InspectionReportComponents</DataSetName>
+        <ReportItems>
+          <Table Name="table3">
+            <ZIndex>1</ZIndex>
+            <Top>0.125in</Top>
+            <Details>
+              <TableRows>
+                <TableRow>
+                  <Visibility>
+                    <Hidden>=IIF((NOT Parameters!PreInspection.Value) AND (Fields!Condition.Value = "N"),TRUE,FALSE)</Hidden>
+                  </Visibility>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox11">
+                          <Style>
+                            <Color>=IIF(Fields!Condition.Value = "N","DarkGray","Black")</Color>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>="(" &amp; Fields!No.Value &amp; ")" &amp;Fields!Item.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox12">
+                          <Style>
+                            <Color>=IIF(Fields!Condition.Value = "N","DarkGray","Black")</Color>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!Condition.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.125in</Height>
+                </TableRow>
+              </TableRows>
+              <Grouping Name="table3_Details_Group">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!No.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!No.Value</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+            </Details>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox16">
+                          <Style>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>3</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Item</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox17">
+                          <Style>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>2</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Cond.</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.125in</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <TableColumns>
+              <TableColumn>
+                <Width>2.1875in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.375in</Width>
+              </TableColumn>
+            </TableColumns>
+          </Table>
+          <Textbox Name="textbox19">
+            <Width>1.9375in</Width>
+            <Style>
+              <FontFamily>Calibri</FontFamily>
+              <FontSize>9pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.125in</Height>
+            <Value>=Fields!ComponentName.Value &amp; " - " &amp; Fields!ComponentDescription.Value</Value>
+          </Textbox>
+        </ReportItems>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!ComponentName.Value</FilterExpression>
+            <Operator>In</Operator>
+            <FilterValues>
+              <FilterValue>Monorail</FilterValue>
+              <FilterValue>Trolley</FilterValue>
+              <FilterValue>Push-Button / Remote Control</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
+        <Top>0.125in</Top>
+        <Width>2.5625in</Width>
+        <Grouping Name="list3_ListControl">
+          <Label>=Fields!ComponentName.Value</Label>
+          <GroupExpressions>
+            <GroupExpression>=Fields!InspectionComponentID.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+      </List>
+      <List Name="list2">
+        <NoRows>No Jib Cranes or Hoists on this Inspection</NoRows>
+        <ZIndex>2</ZIndex>
+        <Left>2.6875in</Left>
+        <DataSetName>InspectionReportComponents</DataSetName>
+        <ReportItems>
+          <Table Name="table1">
+            <ZIndex>1</ZIndex>
+            <Top>0.125in</Top>
+            <Details>
+              <TableRows>
+                <TableRow>
+                  <Visibility>
+                    <Hidden>=IIF((NOT Parameters!PreInspection.Value) AND (Fields!Condition.Value = "N"),TRUE,FALSE)</Hidden>
+                  </Visibility>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox2">
+                          <Style>
+                            <Color>=IIF(Fields!Condition.Value = "N","DarkGray","Black")</Color>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>="(" &amp; Fields!No.Value &amp; ")" &amp;Fields!Item.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox3">
+                          <Style>
+                            <Color>=IIF(Fields!Condition.Value = "N","DarkGray","Black")</Color>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!Condition.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.125in</Height>
+                </TableRow>
+              </TableRows>
+              <Grouping Name="table1_Details_Group">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!No.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!No.Value</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+            </Details>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox6">
+                          <Style>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>3</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Item</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox7">
+                          <Style>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>2</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Cond.</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.125in</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <TableColumns>
+              <TableColumn>
+                <Width>2.1875in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.375in</Width>
+              </TableColumn>
+            </TableColumns>
+          </Table>
+          <Textbox Name="textbox9">
+            <Width>1.9375in</Width>
+            <Style>
+              <FontFamily>Calibri</FontFamily>
+              <FontSize>9pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.125in</Height>
+            <Value>=Fields!ComponentName.Value &amp; " - " &amp; Fields!ComponentDescription.Value</Value>
+          </Textbox>
+        </ReportItems>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!ComponentName.Value</FilterExpression>
+            <Operator>In</Operator>
+            <FilterValues>
+              <FilterValue>Jib Crane</FilterValue>
+              <FilterValue>Hoist</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
+        <Top>0.125in</Top>
+        <Width>2.5625in</Width>
+        <Grouping Name="list2_ListControl">
+          <Label>=Fields!ComponentName.Value</Label>
+          <GroupExpressions>
+            <GroupExpression>=Fields!InspectionComponentID.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+      </List>
+      <List Name="list1">
+        <NoRows>No Runways or Bridge Cranes on this Inspection</NoRows>
+        <ZIndex>1</ZIndex>
+        <DataSetName>InspectionReportComponents</DataSetName>
+        <ReportItems>
+          <Table Name="table2">
+            <ZIndex>1</ZIndex>
+            <Top>0.125in</Top>
+            <Details>
+              <TableRows>
+                <TableRow>
+                  <Visibility>
+                    <Hidden>=IIF((NOT Parameters!PreInspection.Value) AND (Fields!Condition.Value = "N"),TRUE,FALSE)</Hidden>
+                  </Visibility>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="Item">
+                          <rd:DefaultName>Item</rd:DefaultName>
+                          <Style>
+                            <Color>=IIF(Fields!Condition.Value = "N","DarkGray","Black")</Color>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>="(" &amp; Fields!No.Value &amp; ")" &amp;Fields!Item.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="Condition">
+                          <rd:DefaultName>Condition</rd:DefaultName>
+                          <Style>
+                            <Color>=IIF(Fields!Condition.Value = "N","DarkGray","Black")</Color>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!Condition.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.125in</Height>
+                </TableRow>
+              </TableRows>
+              <Grouping Name="table2_Details_Group">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!No.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!No.Value</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+            </Details>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox36">
+                          <rd:DefaultName>textbox36</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>3</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Item</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox37">
+                          <rd:DefaultName>textbox37</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>2</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Cond.</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.125in</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <TableColumns>
+              <TableColumn>
+                <Width>2.1875in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.375in</Width>
+              </TableColumn>
+            </TableColumns>
+          </Table>
+          <Textbox Name="ComponentName">
+            <rd:DefaultName>ComponentName</rd:DefaultName>
+            <Width>1.9375in</Width>
+            <Style>
+              <FontFamily>Calibri</FontFamily>
+              <FontSize>9pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.125in</Height>
+            <Value>=Fields!ComponentName.Value &amp; " - " &amp; Fields!ComponentDescription.Value</Value>
+          </Textbox>
+        </ReportItems>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!ComponentName.Value</FilterExpression>
+            <Operator>In</Operator>
+            <FilterValues>
+              <FilterValue>Runway</FilterValue>
+              <FilterValue>Bridge</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
+        <Top>0.125in</Top>
+        <Width>2.5625in</Width>
+        <Grouping Name="list1_Details_Group">
+          <Label>=Fields!ComponentName.Value</Label>
+          <GroupExpressions>
+            <GroupExpression>=Fields!InspectionComponentID.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+      </List>
+      <Textbox Name="textbox13">
+        <rd:DefaultName>textbox13</rd:DefaultName>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.125in</Height>
+        <Value>Conditions: G=Good, F=Fair, P=Poor, U=Unsatisfactory, N=Not applicable.</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.5in</Height>
+    <Style>
+      <BackgroundColor>White</BackgroundColor>
+    </Style>
+  </Body>
+  <Language>en-US</Language>
+</Report>

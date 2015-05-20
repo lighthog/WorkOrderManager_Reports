@@ -1,0 +1,1210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="AceWOMDataSource">
+      <rd:DataSourceID>7654dc3f-f92c-46ac-910a-85745e3a57cd</rd:DataSourceID>
+      <DataSourceReference>AceWOMDataSource</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="QuoteID">
+      <DataType>String</DataType>
+      <Prompt>QuoteID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ShowPartsAndLabor">
+      <DataType>Boolean</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>true</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Show Parts &amp; Labor</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="HideCraneVerb">
+      <DataType>Boolean</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>False</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Hide Excess Verbage</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.0625in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.5in</RightMargin>
+  <LeftMargin>0.5in</LeftMargin>
+  <BottomMargin>0.25in</BottomMargin>
+  <rd:ReportID>ee6ad4ad-080d-45b2-afe3-0bebcf80af5d</rd:ReportID>
+  <EmbeddedImages>
+    <EmbeddedImage Name="ace_logo_sm_300px_w">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <DataSets>
+    <DataSet Name="QuoteDataSet">
+      <Fields>
+        <Field Name="QuoteID">
+          <DataField>QuoteID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="QuoteDescription">
+          <DataField>QuoteDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QuoteItemID">
+          <DataField>QuoteItemID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Parts">
+          <DataField>Parts</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Labor">
+          <DataField>Labor</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Issue">
+          <DataField>Issue</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QuoteItemDescription">
+          <DataField>QuoteItemDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerNameID">
+          <DataField>CustomerNameID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BranchName">
+          <DataField>BranchName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address">
+          <DataField>Address</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="State">
+          <DataField>State</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Zip">
+          <DataField>Zip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Phone">
+          <DataField>Phone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fax">
+          <DataField>Fax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Tax">
+          <DataField>Tax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Freight">
+          <DataField>Freight</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Payment">
+          <DataField>Payment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ValidFor">
+          <DataField>ValidFor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DateEffective">
+          <DataField>DateEffective</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="PreparedFor">
+          <DataField>PreparedFor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QuotePhone">
+          <DataField>QuotePhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProposalName">
+          <DataField>ProposalName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QuoteAddress">
+          <DataField>QuoteAddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QuoteCity">
+          <DataField>QuoteCity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QuoteState">
+          <DataField>QuoteState</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QuoteZip">
+          <DataField>QuoteZip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BranchID">
+          <DataField>BranchID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Deposit">
+          <DataField>Deposit</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="WarrantyPeriod">
+          <DataField>WarrantyPeriod</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT        Quote.QuoteID, Quote.Description AS QuoteDescription, QuoteItem.QuoteItemID, ISNULL(QuoteItem.Parts, 0) AS Parts, ISNULL(QuoteItem.Labor, 0) AS Labor, 
+                         QuoteItem.Issue, QuoteItem.Description AS QuoteItemDescription, Customer.CustomerName + ' - ' + Customer.AceID AS CustomerNameID, 
+                         Branch.BranchName, Branch.Address, Branch.City, Branch.State, Branch.Zip, Branch.Phone, Branch.Fax, Quote.Tax, Quote.Freight, Quote.Payment, 
+                         ISNULL(Quote.ValidFor, '60 Days') AS ValidFor, Quote.DateEffective, Quote.PreparedFor, Quote.Phone AS QuotePhone, Quote.Email, Quote.ProposalName, 
+                         Quote.Address AS QuoteAddress, Quote.City AS QuoteCity, Quote.State AS QuoteState, Quote.Zip AS QuoteZip, Branch.BranchID, ISNULL(Quote.Deposit, 0) 
+                         AS Deposit, Quote.WarrantyPeriod
+FROM            Quote LEFT OUTER JOIN
+                         QuoteItem ON Quote.QuoteID = QuoteItem.QuoteID INNER JOIN
+                         Customer ON Quote.CustomerID = Customer.CustomerID INNER JOIN
+                         Branch ON Quote.BranchID = Branch.BranchID
+WHERE        (Quote.QuoteID = @QuoteID)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@QuoteID">
+            <Value>=Parameters!QuoteID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>7.5in</Width>
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox28">
+        <Visibility>
+          <Hidden>=IIF(Parameters!HideCraneVerb.Value,True,False)</Hidden>
+        </Visibility>
+        <Top>3.75in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>34</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>If electrical service is not available when the installation is completed and a return trip is required to start-up and test the crane, the trip will be invoiced at our standard service rate plus mileage and per diem if required.</Value>
+      </Textbox>
+      <Textbox Name="textbox27">
+        <Visibility>
+          <Hidden>=IIF(Parameters!HideCraneVerb.Value,True,False)</Hidden>
+        </Visibility>
+        <Top>3.5625in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>33</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>Ace Industries requires unobstructed access to the crane and complete control of the designated work area, 24 hours a day, for the duration of the project.  Installation is based on work performed during regular straight time hours, 8AM to 4PM, Monday through Friday. Work delayed by inability to freely access site or request for non-standard work hours shall result in additional charges.</Value>
+      </Textbox>
+      <Textbox Name="textbox25">
+        <Visibility>
+          <Hidden>=IIF(Parameters!HideCraneVerb.Value,True,False)</Hidden>
+        </Visibility>
+        <Top>3.375in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>32</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>All pipes, lights, structures, etc. that obstruct the crane and or runway path shall be removed by customer prior to installation.</Value>
+      </Textbox>
+      <Textbox Name="textbox24">
+        <rd:DefaultName>textbox24</rd:DefaultName>
+        <Visibility>
+          <Hidden>=IIF(First(Fields!WarrantyPeriod.Value, "QuoteDataSet") = "",true,false)</Hidden>
+        </Visibility>
+        <Top>3.1875in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>31</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>="Warranty: " &amp; First(Fields!WarrantyPeriod.Value, "QuoteDataSet") &amp; " warranty for repair or replacement of defective materials or workmanship."</Value>
+      </Textbox>
+      <Textbox Name="textbox23">
+        <Top>6.5in</Top>
+        <Width>0.5625in</Width>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>30</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>5.625in</Left>
+        <Value>Date</Value>
+      </Textbox>
+      <Textbox Name="textbox16">
+        <rd:DefaultName>textbox16</rd:DefaultName>
+        <Top>6.5in</Top>
+        <Width>0.5625in</Width>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>29</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2in</Left>
+        <Value>Name</Value>
+      </Textbox>
+      <Textbox Name="textbox15">
+        <rd:DefaultName>textbox15</rd:DefaultName>
+        <Top>6.3125in</Top>
+        <Width>0.75in</Width>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>28</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>Signature:</Value>
+      </Textbox>
+      <Line Name="line2">
+        <Top>6.5in</Top>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>27</ZIndex>
+        <Left>0.75in</Left>
+        <Height>0in</Height>
+      </Line>
+      <Textbox Name="Deposit">
+        <rd:DefaultName>Deposit</rd:DefaultName>
+        <Top>4.75in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>26</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.4375in</Left>
+        <Height>0.1875in</Height>
+        <Value>="•  Deposit: " &amp; FORMAT(FIRST(Fields!Deposit.Value),"P")</Value>
+      </Textbox>
+      <Line Name="line1">
+        <Top>2.9375in</Top>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>25</ZIndex>
+        <Height>0in</Height>
+      </Line>
+      <Textbox Name="textbox42">
+        <Top>6.0625in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>24</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.4375in</Left>
+        <Height>0.1875in</Height>
+        <Value>•  All of the information contained in this proposal is confidential and has been prepared for your exclusive use in considering the purchase of the services described herein.  Transmission of any part of this information or use for other reasons than those described above is prohibited without written consent from Ace Industries, Inc.</Value>
+      </Textbox>
+      <Textbox Name="textbox41">
+        <Top>5.875in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>23</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.4375in</Left>
+        <Height>0.1875in</Height>
+        <Value>="•  All orders become effective upon acceptance at the corporate headquarters of Ace Industries.  All quoted prices expire " &amp; First(Fields!ValidFor.Value, "QuoteDataSet") &amp; " from the quote date.  No quotation is effective unless signed by an authorized representative of Ace Industries, Inc.  No modifications or additional conditions, whether written or oral, will be binding on Ace Industries, Inc. unless agreed to in writing and signed by an authorized representative of Ace Industries, Inc."</Value>
+      </Textbox>
+      <Textbox Name="textbox40">
+        <Top>5.6875in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>22</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.4375in</Left>
+        <Height>0.1875in</Height>
+        <Value>•  Cancellations or Returns: All services and prices included on this quote are considered custom and are not transferrable.  In the event of cancellation by the customer, all amounts will be paid in full for parts and services designed and / or delivered.  Special order items are non-returnable.</Value>
+      </Textbox>
+      <Textbox Name="textbox39">
+        <Top>5.5in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>21</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.4375in</Left>
+        <Height>0.1875in</Height>
+        <Value>•  Scheduled work is for uninterrupted mobilization.  Any delays in access for repairs or changes to the original scope of work will be billed on a time and materials basis.</Value>
+      </Textbox>
+      <Textbox Name="textbox38">
+        <Top>5.3125in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>20</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.4375in</Left>
+        <Height>0.1875in</Height>
+        <Value>•  Customers supplying lifts and/or mobile equipment shall be held liable for the appropriate capacities and safety of all supplied equipment.</Value>
+      </Textbox>
+      <Textbox Name="textbox37">
+        <Top>5.125in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>19</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.4375in</Left>
+        <Height>0.1875in</Height>
+        <Value>•  Customer shall maintain a safe work area around work site during all services.</Value>
+      </Textbox>
+      <Textbox Name="textbox36">
+        <Top>4.9375in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>18</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.4375in</Left>
+        <Height>0.1875in</Height>
+        <Value>All order subject to Ace Industries, Inc Standard Terms and Conditions</Value>
+      </Textbox>
+      <Textbox Name="textbox35">
+        <Top>4.5625in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>17</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.4375in</Left>
+        <Height>0.1875in</Height>
+        <Value>="•  Payment: " &amp; First(Fields!Payment.Value, "QuoteDataSet")</Value>
+      </Textbox>
+      <Textbox Name="textbox34">
+        <Top>4.375in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>16</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.4375in</Left>
+        <Height>0.1875in</Height>
+        <Value>="•  Freight: " &amp; First(Fields!Freight.Value, "QuoteDataSet")</Value>
+      </Textbox>
+      <Textbox Name="textbox33">
+        <Top>4.1875in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>15</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.4375in</Left>
+        <Height>0.1875in</Height>
+        <Value>="•  Tax: " &amp; First(Fields!Tax.Value, "QuoteDataSet")</Value>
+      </Textbox>
+      <Textbox Name="textbox31">
+        <rd:DefaultName>textbox31</rd:DefaultName>
+        <Top>4in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>14</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>Terms &amp; Conditions</Value>
+      </Textbox>
+      <Textbox Name="textbox26">
+        <rd:DefaultName>textbox26</rd:DefaultName>
+        <Top>3in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>13</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>="Quote is valid for " &amp; First(Fields!ValidFor.Value, "QuoteDataSet") &amp; " from the date of issuance.  Orders placed after this period my be subject to pricing increases."</Value>
+      </Textbox>
+      <Textbox Name="QuoteID">
+        <rd:DefaultName>QuoteID</rd:DefaultName>
+        <Width>2.625in</Width>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>12</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>="Quote #: " &amp; First(Fields!BranchID.Value) &amp; "00" &amp; FIRST(Fields!QuoteID.Value)</Value>
+      </Textbox>
+      <Textbox Name="textbox30">
+        <Top>1.4375in</Top>
+        <Width>5.3125in</Width>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>11</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>=First(Fields!QuoteAddress.Value, "QuoteDataSet")</Value>
+      </Textbox>
+      <Textbox Name="textbox21">
+        <Top>1.625in</Top>
+        <Width>5.3125in</Width>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>10</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>=IIF(First(Fields!QuoteState.Value, "QuoteDataSet") &lt;&gt; "",   First(Fields!QuoteCity.Value, "QuoteDataSet") &amp; ", " &amp; First(Fields!QuoteState.Value, "QuoteDataSet") &amp; " " &amp; First(Fields!QuoteZip.Value, "QuoteDataSet"),"")</Value>
+      </Textbox>
+      <Textbox Name="textbox9">
+        <Top>1.875in</Top>
+        <Width>5.3125in</Width>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>9</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>="Re: " &amp; First(Fields!ProposalName.Value, "QuoteDataSet")</Value>
+      </Textbox>
+      <Textbox Name="textbox8">
+        <rd:DefaultName>textbox8</rd:DefaultName>
+        <Top>2.0625in</Top>
+        <Width>5.3125in</Width>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>8</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>="Dear " &amp; First(Fields!PreparedFor.Value, "QuoteDataSet") &amp; ","</Value>
+      </Textbox>
+      <Textbox Name="PreparedFor">
+        <rd:DefaultName>PreparedFor</rd:DefaultName>
+        <Top>1.0625in</Top>
+        <Width>5.3125in</Width>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>7</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>=First(Fields!PreparedFor.Value)</Value>
+      </Textbox>
+      <Textbox Name="DateEffective">
+        <rd:DefaultName>DateEffective</rd:DefaultName>
+        <Top>0.8125in</Top>
+        <Width>5.3125in</Width>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <Format>d</Format>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>=First(Fields!DateEffective.Value)</Value>
+      </Textbox>
+      <Textbox Name="CustomerNameID">
+        <rd:DefaultName>CustomerNameID</rd:DefaultName>
+        <Top>1.25in</Top>
+        <Width>5.3125in</Width>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>=First(Fields!CustomerNameID.Value)</Value>
+      </Textbox>
+      <Textbox Name="textbox6">
+        <Top>0.5625in</Top>
+        <Style>
+          <BorderColor>
+            <Default>LightCoral</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Bottom>Solid</Bottom>
+          </BorderStyle>
+          <BorderWidth>
+            <Default>3pt</Default>
+          </BorderWidth>
+          <FontFamily>Calibri</FontFamily>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.375in</Left>
+        <Height>0.1875in</Height>
+        <Value>aceindustries.com</Value>
+      </Textbox>
+      <Textbox Name="textbox22">
+        <Top>0.375in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.375in</Left>
+        <Height>0.1875in</Height>
+        <Value>="Phone: " &amp; First(Fields!Phone.Value, "QuoteDataSet") &amp; " | Fax: " &amp; First(Fields!Fax.Value, "QuoteDataSet")</Value>
+      </Textbox>
+      <Textbox Name="textbox20">
+        <Top>0.1875in</Top>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.375in</Left>
+        <Height>0.1875in</Height>
+        <Value>=First(Fields!Address.Value, "QuoteDataSet") &amp; " | " &amp; First(Fields!City.Value, "QuoteDataSet") &amp; ", " &amp; First(Fields!State.Value, "QuoteDataSet") &amp; " " &amp; First(Fields!Zip.Value, "QuoteDataSet")</Value>
+      </Textbox>
+      <Textbox Name="Address">
+        <rd:DefaultName>Address</rd:DefaultName>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.375in</Left>
+        <Height>0.1875in</Height>
+        <Value>="Ace Industries Inc. - " &amp; First(Fields!BranchName.Value, "QuoteDataSet")</Value>
+      </Textbox>
+      <Table Name="table1">
+        <DataSetName>QuoteDataSet</DataSetName>
+        <KeepTogether>true</KeepTogether>
+        <Top>2.3125in</Top>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=RowNumber("table1")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Issue">
+                      <rd:DefaultName>Issue</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!QuoteItemDescription.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox18">
+                      <rd:DefaultName>textbox18</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Issue.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Parts">
+                      <rd:DefaultName>Parts</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <Format>C</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF(Fields!Parts.Value = 0,"N/A",Fields!Parts.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Labor">
+                      <rd:DefaultName>Labor</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <Format>C</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF(Fields!Labor.Value = 0,"N/A",Fields!Labor.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox13">
+                      <rd:DefaultName>textbox13</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <Format>C</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF(Fields!Parts.Value + Fields!Labor.Value = 0, "N/A",Fields!Parts.Value + Fields!Labor.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.1875in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+        </Style>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>15</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>14</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Description</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox17">
+                      <rd:DefaultName>textbox17</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>13</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Notes</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>12</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Parts</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Labor</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox11">
+                      <rd:DefaultName>textbox11</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Line Total</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.1875in</Height>
+            </TableRow>
+          </TableRows>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>0.30882in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.1875in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.6875in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Visibility>
+              <Hidden>=iif(Parameters!ShowPartsAndLabor.Value,false,true)</Hidden>
+            </Visibility>
+            <Width>0.75in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Visibility>
+              <Hidden>=iif(Parameters!ShowPartsAndLabor.Value,false,true)</Hidden>
+            </Visibility>
+            <Width>0.75in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.8125in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>0.5625in</Height>
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox7">
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox10">
+                      <rd:DefaultName>textbox10</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox19">
+                      <rd:DefaultName>textbox19</rd:DefaultName>
+                      <Style>
+                        <FontFamily>Calibri</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Grand Total:</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox14">
+                      <rd:DefaultName>textbox14</rd:DefaultName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <Format>C</Format>
+                        <TextDecoration>Underline</TextDecoration>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=SUM(Fields!Parts.Value + Fields!Labor.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.1875in</Height>
+            </TableRow>
+          </TableRows>
+        </Footer>
+      </Table>
+    </ReportItems>
+    <Height>6.6875in</Height>
+    <Style>
+      <BackgroundColor>White</BackgroundColor>
+    </Style>
+  </Body>
+  <Language>en-US</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox12">
+        <rd:DefaultName>textbox12</rd:DefaultName>
+        <Width>2.875in</Width>
+        <Style>
+          <FontFamily>Calibri</FontFamily>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>="Page " &amp; Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+      </Textbox>
+      <Image Name="image1">
+        <Sizing>AutoSize</Sizing>
+        <Source>Embedded</Source>
+        <Style />
+        <Left>4.375in</Left>
+        <Value>ace_logo_sm_300px_w</Value>
+      </Image>
+    </ReportItems>
+    <Height>0.52083in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <Style>
+      <BackgroundColor>White</BackgroundColor>
+    </Style>
+  </PageFooter>
+  <TopMargin>0.25in</TopMargin>
+</Report>

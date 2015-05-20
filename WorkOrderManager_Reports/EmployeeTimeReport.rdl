@@ -1,0 +1,752 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="AceWOMDataSource">
+      <rd:DataSourceID>0b2b0b52-f32f-498b-9c4b-952ad1c75d72</rd:DataSourceID>
+      <DataSourceReference>AceWOMDataSource</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="BranchID">
+      <DataType>String</DataType>
+      <Prompt>BranchID</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>BranchListDataSet</DataSetName>
+          <ValueField>BranchID</ValueField>
+          <LabelField>BranchName</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="EmployeeID">
+      <DataType>String</DataType>
+      <Prompt>EmployeeID</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>EmployeeListDataSet</DataSetName>
+          <ValueField>EmployeeID</ValueField>
+          <LabelField>Employee</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="Date1">
+      <DataType>DateTime</DataType>
+      <Prompt>Start Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Date2">
+      <DataType>DateTime</DataType>
+      <Prompt>End Date</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.5in</RightMargin>
+  <LeftMargin>0.5in</LeftMargin>
+  <BottomMargin>0.5in</BottomMargin>
+  <rd:ReportID>e388c0d2-dace-4d48-ae54-83bacbd65092</rd:ReportID>
+  <EmbeddedImages>
+    <EmbeddedImage Name="acelogo_small">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>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
+mqM6uqM82qM++qNAGqRCOqREWqRCGggAOw==</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <DataSets>
+    <DataSet Name="EmployeeTimeDataSet">
+      <Fields>
+        <Field Name="Employee">
+          <DataField>Employee</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WONum">
+          <DataField>WONum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BeginTime">
+          <DataField>BeginTime</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="EndTime">
+          <DataField>EndTime</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Lunch">
+          <DataField>Lunch</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Category">
+          <DataField>Category</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BranchID">
+          <DataField>BranchID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BranchName">
+          <DataField>BranchName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillableTime">
+          <DataField>BillableTime</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT     Employee.FirstName + ' ' + Employee.LastName AS Employee, TimeLineItem.WONum, TimeLineItem.Description, TimeLineItem.BeginTime, 
+                      TimeLineItem.EndTime, TimeLineItem.Lunch, TimeLineItem.Category, Employee.BranchID, Branch.BranchName, 
+                      CASE TimeLineItem.Category WHEN 'Billable' THEN TimeLineItem.MinDiff ELSE 0 END AS BillableTime
+FROM         Employee INNER JOIN
+                      TimeLineItem ON Employee.EmployeeID = TimeLineItem.EmployeeID INNER JOIN
+                      Branch ON Employee.BranchID = Branch.BranchID
+WHERE     (Employee.BranchID IN (@BranchID)) AND (Employee.EmployeeID IN (@EmployeeID)) AND (CONVERT(varchar, TimeLineItem.BeginTime, 101) 
+                      BETWEEN @Date1 AND @Date2)
+ORDER BY Employee.BranchID, Employee.FirstName, Employee.LastName, TimeLineItem.BeginTime</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@BranchID">
+            <Value>=Parameters!BranchID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EmployeeID">
+            <Value>=Parameters!EmployeeID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Date1">
+            <Value>=Parameters!Date1.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Date2">
+            <Value>=Parameters!Date2.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="BranchListDataSet">
+      <Fields>
+        <Field Name="BranchID">
+          <DataField>BranchID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BranchName">
+          <DataField>BranchName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT     BranchID, BranchName
+FROM         Branch
+WHERE     (BranchID &lt;&gt; '%%')</CommandText>
+      </Query>
+    </DataSet>
+    <DataSet Name="EmployeeListDataSet">
+      <Fields>
+        <Field Name="Employee">
+          <DataField>Employee</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeID">
+          <DataField>EmployeeID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT     FirstName + ' ' + LastName AS Employee, EmployeeID
+FROM         Employee
+WHERE     (BranchID IN (@BranchID))
+ORDER BY BranchID, FirstName, LastName</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@BranchID">
+            <Value>=Parameters!BranchID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>7.5in</Width>
+  <Body>
+    <ReportItems>
+      <Image Name="image1">
+        <Sizing>AutoSize</Sizing>
+        <Width>2.84375in</Width>
+        <Source>Embedded</Source>
+        <Style />
+        <ZIndex>2</ZIndex>
+        <Left>4.625in</Left>
+        <Height>0.41667in</Height>
+        <Value>acelogo_small</Value>
+      </Image>
+      <Textbox Name="textbox7">
+        <rd:DefaultName>textbox7</rd:DefaultName>
+        <Width>2.875in</Width>
+        <Style>
+          <FontSize>14pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.375in</Height>
+        <Value>Employee Time Report</Value>
+      </Textbox>
+      <Table Name="table1">
+        <DataSetName>EmployeeTimeDataSet</DataSetName>
+        <Top>0.5in</Top>
+        <TableGroups>
+          <TableGroup>
+            <Grouping Name="table1_Group2">
+              <GroupExpressions>
+                <GroupExpression>=Fields!BranchName.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>7</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="BranchName">
+                          <rd:DefaultName>BranchName</rd:DefaultName>
+                          <Style>
+                            <FontFamily>Garamond</FontFamily>
+                            <FontSize>12pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>20</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!BranchName.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.25in</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+          </TableGroup>
+          <TableGroup>
+            <Grouping Name="table1_Group1">
+              <GroupExpressions>
+                <GroupExpression>=Fields!Employee.Value</GroupExpression>
+              </GroupExpressions>
+              <Parent>=Fields!BranchID.Value</Parent>
+            </Grouping>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>7</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="Employee">
+                          <rd:DefaultName>Employee</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>19</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!Employee.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.25in</Height>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox1">
+                          <rd:DefaultName>textbox1</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>18</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>WO#</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox2">
+                          <rd:DefaultName>textbox2</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>17</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Begin Time</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox3">
+                          <rd:DefaultName>textbox3</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>16</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>End Time</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox5">
+                          <rd:DefaultName>textbox5</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>15</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Lunch</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox21">
+                          <rd:DefaultName>textbox21</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>14</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Hours</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox4">
+                          <rd:DefaultName>textbox4</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>13</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Billable</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox17">
+                          <rd:DefaultName>textbox17</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>12</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Description</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.25in</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Footer>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>3</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox12">
+                          <rd:DefaultName>textbox12</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>11</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Total:</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="Lunch_1">
+                          <rd:DefaultName>Lunch_1</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <TextDecoration>Underline</TextDecoration>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>10</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Sum(Fields!Lunch.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox23">
+                          <rd:DefaultName>textbox23</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <TextDecoration>Underline</TextDecoration>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>9</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=SUM(DateDiff("n",Fields!BeginTime.Value,Fields!EndTime.Value)/60 - Fields!Lunch.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox10">
+                          <rd:DefaultName>textbox10</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <TextDecoration>Underline</TextDecoration>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>8</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=SUM(Fields!BillableTime.Value)/60</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox19">
+                          <rd:DefaultName>textbox19</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <FontFamily>Calibri</FontFamily>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>7</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.25in</Height>
+                </TableRow>
+              </TableRows>
+            </Footer>
+          </TableGroup>
+        </TableGroups>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="WONum">
+                      <rd:DefaultName>WONum</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!WONum.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="BeginTime">
+                      <rd:DefaultName>BeginTime</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <Format>g</Format>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!BeginTime.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="EndTime">
+                      <rd:DefaultName>EndTime</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <Format>g</Format>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!EndTime.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Lunch">
+                      <rd:DefaultName>Lunch</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Lunch.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox22">
+                      <rd:DefaultName>textbox22</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=DateDiff("n",Fields!BeginTime.Value,Fields!EndTime.Value)/60 - Fields!Lunch.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!BillableTime.Value/60</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Description">
+                      <rd:DefaultName>Description</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Calibri</FontFamily>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Description.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+          <Sorting>
+            <SortBy>
+              <SortExpression>=Fields!BeginTime.Value</SortExpression>
+              <Direction>Ascending</Direction>
+            </SortBy>
+          </Sorting>
+        </Details>
+        <TableColumns>
+          <TableColumn>
+            <Width>0.625in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.375in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.375in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.625in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.625in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.625in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.25in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Height>1.75in</Height>
+    <Style>
+      <BackgroundColor>White</BackgroundColor>
+    </Style>
+  </Body>
+  <Language>en-US</Language>
+  <TopMargin>0.5in</TopMargin>
+</Report>

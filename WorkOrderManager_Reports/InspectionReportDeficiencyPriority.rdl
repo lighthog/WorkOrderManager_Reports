@@ -1,0 +1,1183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="AceWOMDataSource">
+      <DataSourceReference>AceWOMDataSource</DataSourceReference>
+      <rd:DataSourceID>7654dc3f-f92c-46ac-910a-85745e3a57cd</rd:DataSourceID>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSetQuoteDetails">
+      <Fields>
+        <Field Name="CustomerEquipID">
+          <DataField>CustomerEquipID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Location">
+          <DataField>Location</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EquipmentNo">
+          <DataField>EquipmentNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EquipmentDesc">
+          <DataField>EquipmentDesc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ComponentDescription">
+          <DataField>ComponentDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ComponentName">
+          <DataField>ComponentName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ComponentID">
+          <DataField>ComponentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Deficiency">
+          <DataField>Deficiency</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Condition">
+          <DataField>Condition</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QuoteID">
+          <DataField>QuoteID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EquipmentID">
+          <DataField>EquipmentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="InspectionID">
+          <DataField>InspectionID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="InspectionDate">
+          <DataField>InspectionDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Inspector">
+          <DataField>Inspector</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InspectionType">
+          <DataField>InspectionType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Reviewer">
+          <DataField>Reviewer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Parts">
+          <DataField>Parts</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Labor">
+          <DataField>Labor</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Recommendation">
+          <DataField>Recommendation</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ActionRequired">
+          <DataField>ActionRequired</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Manufacturer">
+          <DataField>Manufacturer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ModelNo">
+          <DataField>ModelNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SerialNo">
+          <DataField>SerialNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Capacity">
+          <DataField>Capacity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ComponentPointNo">
+          <DataField>ComponentPointNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ComponentPointItem">
+          <DataField>ComponentPointItem</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT        QuoteDetails.CustomerEquipID, QuoteDetails.Location, QuoteDetails.EquipmentNo, QuoteDetails.EquipmentDesc, QuoteDetails.ComponentDescription, 
+                         QuoteDetails.ComponentName, QuoteDetails.ComponentID, QuoteDetails.Deficiency, QuoteDetails.Condition, QuoteDetails.QuoteID, 
+                         QuoteDetails.EquipmentID, QuoteDetails.InspectionID, QuoteDetails.InspectionDate, QuoteDetails.Inspector, QuoteDetails.InspectionType, 
+                         QuoteDetails.Reviewer, ISNULL(QuoteDetails.Parts, 0) AS Parts, ISNULL(QuoteDetails.Labor, 0) AS Labor, QuoteDetails.Recommendation, 
+                         QuoteDetails.ActionRequired, ComponentInfoPivot.Manufacturer, ComponentInfoPivot.ModelNo, ComponentInfoPivot.SerialNo, ComponentInfoPivot.Capacity, 
+                         QuoteDetails.ComponentPointNo, QuoteDetails.ComponentPointItem
+FROM            QuoteDetails LEFT OUTER JOIN
+                         ComponentInfoPivot ON QuoteDetails.ComponentID = ComponentInfoPivot.ComponentID
+WHERE        (QuoteDetails.QuoteID = @QuoteID) AND (QuoteDetails.EquipmentID IN (@EquipmentID))</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@QuoteID">
+            <Value>=Parameters!QuoteID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EquipmentID">
+            <Value>=Parameters!EquipmentID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="DataSetLocation">
+      <Fields>
+        <Field Name="LocationID">
+          <DataField>LocationID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT DISTINCT InspectionEquipment.LocationID, CustomerLocation.Description
+FROM            QuoteItem INNER JOIN
+                         ComponentPointData ON QuoteItem.ComponentPointDataID = ComponentPointData.ComponentPointDataID INNER JOIN
+                         InspectionComponent ON ComponentPointData.InspectionComponentID = InspectionComponent.InspectionComponentID INNER JOIN
+                         InspectionEquipment ON InspectionComponent.InspectionEquipmentID = InspectionEquipment.InspectionEquipmentID INNER JOIN
+                         CustomerLocation ON CustomerLocation.CustomerLocationID = InspectionEquipment.LocationID
+WHERE        (QuoteItem.QuoteID = @QuoteID)
+ORDER BY CustomerLocation.Description</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@QuoteID">
+            <Value>=Parameters!QuoteID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="DataSet1Equipment">
+      <Fields>
+        <Field Name="EquipmentID">
+          <DataField>EquipmentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EquipmentNo">
+          <DataField>EquipmentNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Label">
+          <DataField>Label</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT DISTINCT 
+                         InspectionEquipment.EquipmentID, Equipment.EquipmentNo, CustomerLocation.Description, CustomerLocation.Description + ' - ' + CONVERT(varchar, 
+                         Equipment.EquipmentNo) AS Label
+FROM            QuoteItem INNER JOIN
+                         ComponentPointData ON QuoteItem.ComponentPointDataID = ComponentPointData.ComponentPointDataID INNER JOIN
+                         InspectionComponent ON ComponentPointData.InspectionComponentID = InspectionComponent.InspectionComponentID INNER JOIN
+                         InspectionEquipment ON InspectionComponent.InspectionEquipmentID = InspectionEquipment.InspectionEquipmentID INNER JOIN
+                         Equipment ON InspectionEquipment.EquipmentID = Equipment.EquipmentID INNER JOIN
+                         CustomerLocation ON InspectionEquipment.LocationID = CustomerLocation.CustomerLocationID
+WHERE        (QuoteItem.QuoteID = @QuoteID) AND (InspectionEquipment.LocationID IN (@LocationID))
+ORDER BY CustomerLocation.Description, Equipment.EquipmentNo</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@QuoteID">
+            <Value>=Parameters!QuoteID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@LocationID">
+            <Value>=Parameters!LocationID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="DataSetQuote">
+      <Fields>
+        <Field Name="QuoteCustomername">
+          <DataField>QuoteCustomername</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PreparedFor">
+          <DataField>PreparedFor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WarrantyPeriod">
+          <DataField>WarrantyPeriod</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Accepted">
+          <DataField>Accepted</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="PreparedBy">
+          <DataField>PreparedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Deposit">
+          <DataField>Deposit</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ProposalName">
+          <DataField>ProposalName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Phone">
+          <DataField>Phone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Zip">
+          <DataField>Zip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="State">
+          <DataField>State</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address">
+          <DataField>Address</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DateEffective">
+          <DataField>DateEffective</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ValidFor">
+          <DataField>ValidFor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Payment">
+          <DataField>Payment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Freight">
+          <DataField>Freight</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Tax">
+          <DataField>Tax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BranchID">
+          <DataField>BranchID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QuoteID">
+          <DataField>QuoteID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="BranchName">
+          <DataField>BranchName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BranchAddress">
+          <DataField>BranchAddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BranchCity">
+          <DataField>BranchCity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BranchState">
+          <DataField>BranchState</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BranchZip">
+          <DataField>BranchZip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BranchPhone">
+          <DataField>BranchPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BranchFax">
+          <DataField>BranchFax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TollFreePhone">
+          <DataField>TollFreePhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TollFreeFax">
+          <DataField>TollFreeFax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT     Quote.QuoteCustomername, Quote.PreparedFor, Quote.WarrantyPeriod, Quote.Accepted, Quote.PreparedBy, Quote.Deposit, Quote.ProposalName, 
+                      Quote.Email, Quote.Phone, Quote.Zip, Quote.State, Quote.City, Quote.Address, Quote.DateEffective, Quote.ValidFor, Quote.Payment, Quote.Freight, 
+                      Quote.Tax, Quote.BranchID, Quote.QuoteID, Branch.BranchName, Branch.Address AS BranchAddress, Branch.City AS BranchCity, 
+                      Branch.State AS BranchState, Branch.Zip AS BranchZip, Branch.Phone AS BranchPhone, Branch.Fax AS BranchFax, Branch.TollFreePhone, 
+                      Branch.TollFreeFax
+FROM         Quote INNER JOIN
+                      Branch ON Quote.BranchID = Branch.BranchID
+WHERE     (Quote.QuoteID = @QuoteID)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@QuoteID">
+            <Value>=Parameters!QuoteID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="DataSetAdHocItems">
+      <Fields>
+        <Field Name="Parts">
+          <DataField>Parts</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Labor">
+          <DataField>Labor</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Issue">
+          <DataField>Issue</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT     Parts, Labor, Issue, Description
+FROM         QuoteItem
+WHERE     (QuoteID = @QuoteID) AND (ComponentPointDataID IS NULL)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@QuoteID">
+            <Value>=Parameters!QuoteID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Image Name="image1">
+        <Source>Embedded</Source>
+        <Value>ace_logo_sm_300px_w</Value>
+        <Height>0.52083in</Height>
+        <Width>3.125in</Width>
+        <Style />
+      </Image>
+      <Tablix Name="table1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>0.375in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>5.54167in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.28125in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox4">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>="Area: " &amp; Fields!Location.Value</Value>
+                              <Style>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <ZIndex>19</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>3</ColSpan>
+                    <rd:Selected>true</rd:Selected>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.1875in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox10">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>="Unit #" &amp; Fields!EquipmentNo.Value &amp; " - " &amp; Fields!CustomerEquipID.Value &amp; " (" &amp; Fields!EquipmentDesc.Value &amp; ")"</Value>
+                              <Style>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox10</rd:DefaultName>
+                      <ZIndex>18</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Gainsboro</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>3</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.1875in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox14">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!ComponentName.Value &amp; IIF(Fields!Manufacturer.Value IS NOTHING,""," | Manufacturer: " &amp; Fields!Manufacturer.Value) &amp; IIF(Fields!ModelNo.Value IS NOTHING,""," | Model: " &amp; Fields!ModelNo.Value) &amp; IIF(Fields!SerialNo.Value IS NOTHING,""," | Serial: " &amp; Fields!SerialNo.Value) &amp; IIF(Fields!Capacity.Value IS NOTHING,""," | Capacity: " &amp; Fields!Capacity.Value)</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox14</rd:DefaultName>
+                      <ZIndex>17</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>3</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.1875in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox25">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox25</rd:DefaultName>
+                      <ZIndex>16</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox11">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Item</Value>
+                              <Style>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox11</rd:DefaultName>
+                      <ZIndex>15</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Priority</Value>
+                              <Style>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.1875in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox26">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox26</rd:DefaultName>
+                      <ZIndex>5</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Deficiency">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>="(" &amp; Fields!Condition.Value &amp; ") - #" &amp; Fields!ComponentPointNo.Value &amp; " - " &amp; Fields!ComponentPointItem.Value</Value>
+                              <Style>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Deficiency</rd:DefaultName>
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Recommendation">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Recommendation.Value</Value>
+                              <Style>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Recommendation</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.1875in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox54">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox54</rd:DefaultName>
+                      <ZIndex>10</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>2</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox8">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="table1_Group1">
+                <DocumentMapLabel>="Area: " &amp; Fields!Location.Value</DocumentMapLabel>
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Location.Value</GroupExpression>
+                </GroupExpressions>
+                <PageBreak>
+                  <BreakLocation>End</BreakLocation>
+                </PageBreak>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!Location.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
+                  <KeepTogether>true</KeepTogether>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="table1_Group2">
+                    <DocumentMapLabel>="Unit #" &amp; Fields!EquipmentNo.Value &amp; " - " &amp; Fields!CustomerEquipID.Value &amp; " (" &amp; Fields!EquipmentDesc.Value &amp; ")"</DocumentMapLabel>
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!EquipmentID.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!EquipmentNo.Value</Value>
+                    </SortExpression>
+                    <SortExpression>
+                      <Value>=Fields!ComponentID.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixMembers>
+                    <TablixMember>
+                      <KeepWithGroup>After</KeepWithGroup>
+                      <KeepTogether>true</KeepTogether>
+                    </TablixMember>
+                    <TablixMember>
+                      <Group Name="table1_Group3">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!ComponentID.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <TablixMembers>
+                        <TablixMember>
+                          <KeepWithGroup>After</KeepWithGroup>
+                          <KeepTogether>true</KeepTogether>
+                        </TablixMember>
+                        <TablixMember>
+                          <KeepWithGroup>After</KeepWithGroup>
+                          <KeepTogether>true</KeepTogether>
+                        </TablixMember>
+                        <TablixMember>
+                          <Group Name="table1_Details_Group">
+                            <DataElementName>Detail</DataElementName>
+                          </Group>
+                          <SortExpressions>
+                            <SortExpression>
+                              <Value>=Fields!Location.Value</Value>
+                            </SortExpression>
+                            <SortExpression>
+                              <Value>=Fields!EquipmentNo.Value</Value>
+                            </SortExpression>
+                            <SortExpression>
+                              <Value>=Fields!ComponentID.Value</Value>
+                            </SortExpression>
+                            <SortExpression>
+                              <Value>=Fields!ComponentPointNo.Value</Value>
+                            </SortExpression>
+                          </SortExpressions>
+                          <TablixMembers>
+                            <TablixMember />
+                          </TablixMembers>
+                          <DataElementName>Detail_Collection</DataElementName>
+                          <DataElementOutput>Output</DataElementOutput>
+                          <KeepTogether>true</KeepTogether>
+                        </TablixMember>
+                      </TablixMembers>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                  <KeepTogether>true</KeepTogether>
+                </TablixMember>
+              </TablixMembers>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSetQuoteDetails</DataSetName>
+        <Top>0.89583in</Top>
+        <Height>1.1875in</Height>
+        <Width>9.19792in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <BackgroundColor>White</BackgroundColor>
+          <FontFamily>Calibri</FontFamily>
+        </Style>
+      </Tablix>
+      <Textbox Name="Address">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Ace Industries Inc. - " &amp; First(Fields!BranchName.Value, "DataSetQuote")</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Address</rd:DefaultName>
+        <Left>7.375in</Left>
+        <Height>0.1875in</Height>
+        <Width>3.125in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox47">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!BranchAddress.Value, "DataSetQuote") &amp; " | " &amp; First(Fields!BranchCity.Value, "DataSetQuote") &amp; ", " &amp; First(Fields!BranchState.Value, "DataSetQuote") &amp; " " &amp; First(Fields!BranchZip.Value, "DataSetQuote")</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.1875in</Top>
+        <Left>7.375in</Left>
+        <Height>0.1875in</Height>
+        <Width>3.125in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox45">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Phone: " &amp; First(Fields!BranchPhone.Value, "DataSetQuote") &amp; " | Fax: " &amp; First(Fields!BranchFax.Value, "DataSetQuote")</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.375in</Top>
+        <Left>7.375in</Left>
+        <Height>0.1875in</Height>
+        <Width>3.125in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox43">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>aceindustries.com</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.5625in</Top>
+        <Left>7.375in</Left>
+        <Height>0.1875in</Height>
+        <Width>3.125in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightCoral</Color>
+            <Width>3pt</Width>
+          </Border>
+          <BottomBorder>
+            <Style>Solid</Style>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>2.42708in</Height>
+    <Style />
+  </Body>
+  <ReportParameters>
+    <ReportParameter Name="QuoteID">
+      <DataType>String</DataType>
+      <Prompt>QuoteID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LocationID">
+      <DataType>String</DataType>
+      <Prompt>LocationID</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DataSetLocation</DataSetName>
+          <ValueField>LocationID</ValueField>
+          <LabelField>Description</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="EquipmentID">
+      <DataType>String</DataType>
+      <Prompt>EquipmentID</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DataSet1Equipment</DataSetName>
+          <ValueField>EquipmentID</ValueField>
+          <LabelField>Label</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
+  <Width>10.5in</Width>
+  <Page>
+    <PageFooter>
+      <Height>0.1875in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="textbox12">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Page " &amp; Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+                  <Style>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>textbox12</rd:DefaultName>
+          <Height>0.1875in</Height>
+          <Width>2.875in</Width>
+          <Style>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="textbox7">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!ExecutionTime</Value>
+                  <Style>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>textbox7</rd:DefaultName>
+          <Left>8.25in</Left>
+          <Height>0.1875in</Height>
+          <Width>1.75in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <BackgroundColor>White</BackgroundColor>
+      </Style>
+    </PageFooter>
+    <PageHeight>8.5in</PageHeight>
+    <PageWidth>11in</PageWidth>
+    <InteractiveHeight>11in</InteractiveHeight>
+    <InteractiveWidth>8.5in</InteractiveWidth>
+    <LeftMargin>0.25in</LeftMargin>
+    <RightMargin>0.25in</RightMargin>
+    <TopMargin>0.5in</TopMargin>
+    <BottomMargin>0.25in</BottomMargin>
+    <Style>
+      <BackgroundColor>White</BackgroundColor>
+    </Style>
+  </Page>
+  <EmbeddedImages>
+    <EmbeddedImage Name="ace_logo_sm_300px_w">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportID>ee6ad4ad-080d-45b2-afe3-0bebcf80af5d</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>

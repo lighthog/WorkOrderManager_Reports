@@ -1,0 +1,935 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="AceWOMDataSource">
+      <DataSourceReference>AceWOMDataSource</DataSourceReference>
+      <rd:DataSourceID>6d3fd0dc-f08b-40fa-8db7-44c58941596e</rd:DataSourceID>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="EquipmentListDataSet">
+      <Fields>
+        <Field Name="EquipmentID">
+          <DataField>EquipmentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EquipmentNo">
+          <DataField>EquipmentNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="InspectionEquipmentID">
+          <DataField>InspectionEquipmentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT        InspectionEquipment.EquipmentID, Equipment.EquipmentNo, InspectionEquipment.InspectionEquipmentID
+FROM            InspectionEquipment INNER JOIN
+                         Equipment ON Equipment.EquipmentID = InspectionEquipment.EquipmentID
+WHERE        (InspectionEquipment.LocationID IN (@LocationID)) AND (InspectionEquipment.InspectionID = @InspectionID)
+ORDER BY Equipment.EquipmentNo</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@LocationID">
+            <Value>=Parameters!LocationID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@InspectionID">
+            <Value>=Parameters!InspectionID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="InspectionReportDataSet">
+      <Fields>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LocationDescription">
+          <DataField>LocationDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InspectionDate">
+          <DataField>InspectionDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Inspector">
+          <DataField>Inspector</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InspectionType">
+          <DataField>InspectionType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Reviewer">
+          <DataField>Reviewer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NextFrequentDate">
+          <DataField>NextFrequentDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="NextPeriodicDate">
+          <DataField>NextPeriodicDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="EquipmentNo">
+          <DataField>EquipmentNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CustomerEquipID">
+          <DataField>CustomerEquipID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EquipmentDesc">
+          <DataField>EquipmentDesc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OptionsPerformed">
+          <DataField>OptionsPerformed</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OptionsResult">
+          <DataField>OptionsResult</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OSHACondition">
+          <DataField>OSHACondition</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="OSHAComments">
+          <DataField>OSHAComments</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="GeneralCondition">
+          <DataField>GeneralCondition</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="GeneralComments">
+          <DataField>GeneralComments</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EquipmentID">
+          <DataField>EquipmentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="InspectionID">
+          <DataField>InspectionID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="AceID">
+          <DataField>AceID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerLocationID">
+          <DataField>CustomerLocationID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="InspectionEquipmentID">
+          <DataField>InspectionEquipmentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT     CustomerName, LocationDescription, InspectionDate, Inspector, InspectionType, Reviewer, NextFrequentDate, NextPeriodicDate, EquipmentNo, 
+                      CustomerEquipID, EquipmentDesc, OptionsPerformed, OptionsResult, OSHACondition, OSHAComments, GeneralCondition, GeneralComments, 
+                      EquipmentID, InspectionID, AceID, CustomerLocationID, InspectionEquipmentID
+FROM         InspectionReportEquipment
+WHERE     (InspectionID = @InspectionID) AND (CustomerLocationID IN (@LocationID)) AND (EquipmentID IN (@EquipmentID))
+ORDER BY EquipmentNo</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@InspectionID">
+            <Value>=Parameters!InspectionID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@LocationID">
+            <Value>=Parameters!LocationID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EquipmentID">
+            <Value>=Parameters!EquipmentID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="LocationDataSet">
+      <Fields>
+        <Field Name="LocationID">
+          <DataField>LocationID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT DISTINCT InspectionEquipment.LocationID, CustomerLocation.Description
+FROM         InspectionEquipment INNER JOIN
+                      CustomerLocation ON InspectionEquipment.LocationID = CustomerLocation.CustomerLocationID
+WHERE     (InspectionEquipment.InspectionID = @InspectionID)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@InspectionID">
+            <Value>=Parameters!InspectionID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="WorkOrderDataSet">
+      <Fields>
+        <Field Name="WONum">
+          <DataField>WONum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SONum">
+          <DataField>SONum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT     WorkOrder.WONum, WorkOrder.SONum
+FROM         WorkOrder INNER JOIN
+                      Inspection ON WorkOrder.WONum = Inspection.WONum
+WHERE     (Inspection.InspectionID = @InspectionID)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@InspectionID">
+            <Value>=Parameters!InspectionID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Tablix Name="list1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>8in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>2.75in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="list1_Contents">
+                      <ReportItems>
+                        <Textbox Name="textbox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Equip. Description:</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox2</rd:DefaultName>
+                          <Top>0.625in</Top>
+                          <Left>4.25in</Left>
+                          <Height>0.1875in</Height>
+                          <Width>1.25in</Width>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Customer:</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox3</rd:DefaultName>
+                          <Top>0.4375in</Top>
+                          <Height>0.1875in</Height>
+                          <Width>1.0625in</Width>
+                          <ZIndex>1</ZIndex>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Location:</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0.25in</Top>
+                          <Left>2.0625in</Left>
+                          <Height>0.1875in</Height>
+                          <Width>0.5625in</Width>
+                          <ZIndex>2</ZIndex>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Inspection Date:</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0.25in</Top>
+                          <Height>0.1875in</Height>
+                          <Width>1.0625in</Width>
+                          <ZIndex>3</ZIndex>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Inspector/Reviewer:</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0.4375in</Top>
+                          <Left>3.8125in</Left>
+                          <Height>0.1875in</Height>
+                          <Width>1.25in</Width>
+                          <ZIndex>4</ZIndex>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox10">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Ace Equip No:</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0.625in</Top>
+                          <Height>0.1875in</Height>
+                          <Width>1.0625in</Width>
+                          <ZIndex>5</ZIndex>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Cust Equip. ID:</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0.625in</Top>
+                          <Left>1.625in</Left>
+                          <Height>0.1875in</Height>
+                          <Width>1in</Width>
+                          <ZIndex>6</ZIndex>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="CustomerName">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=First(Fields!CustomerName.Value, "InspectionReportDataSet") &amp; " - " &amp; Fields!AceID.Value</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8.5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CustomerName</rd:DefaultName>
+                          <Top>0.4375in</Top>
+                          <Left>1.0625in</Left>
+                          <Height>0.1875in</Height>
+                          <Width>2.75in</Width>
+                          <ZIndex>7</ZIndex>
+                          <Style>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox16">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!LocationDescription.Value</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8.5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0.25in</Top>
+                          <Left>2.625in</Left>
+                          <Height>0.1875in</Height>
+                          <Width>5.375in</Width>
+                          <ZIndex>8</ZIndex>
+                          <Style>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox15">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=First(Fields!InspectionDate.Value, "InspectionReportDataSet")</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8.5pt</FontSize>
+                                    <Format>d</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0.25in</Top>
+                          <Left>1.0625in</Left>
+                          <Height>0.1875in</Height>
+                          <Width>1in</Width>
+                          <ZIndex>9</ZIndex>
+                          <Style>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox18">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=First(Fields!Inspector.Value, "InspectionReportDataSet") &amp; "/" &amp; First(Fields!Reviewer.Value, "InspectionReportDataSet")</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8.5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0.4375in</Top>
+                          <Left>5.0625in</Left>
+                          <Height>0.1875in</Height>
+                          <Width>2.9375in</Width>
+                          <ZIndex>10</ZIndex>
+                          <Style>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox20">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!EquipmentNo.Value</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8.5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0.625in</Top>
+                          <Left>1.0625in</Left>
+                          <Height>0.1875in</Height>
+                          <Width>0.5625in</Width>
+                          <ZIndex>11</ZIndex>
+                          <Style>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox21">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CustomerEquipID.Value</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8.5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0.625in</Top>
+                          <Left>2.625in</Left>
+                          <Height>0.1875in</Height>
+                          <Width>1.625in</Width>
+                          <ZIndex>12</ZIndex>
+                          <Style>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="OSHAComments">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Parameters!PreInspection.Value = FALSE,"Unsafe Conditions in Violation of OSHA / ANSI Codes:","Unsafe Conditions in Violation of OSHA / ANSI Codes (Use back for additional comments):") &amp; Fields!OSHAComments.Value</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8.5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>OSHAComments</rd:DefaultName>
+                          <Top>0.8125in</Top>
+                          <Height>0.8125in</Height>
+                          <Width>8in</Width>
+                          <ZIndex>13</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox33">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!EquipmentDesc.Value</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8.5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0.625in</Top>
+                          <Left>5.5in</Left>
+                          <Height>0.1875in</Height>
+                          <Width>2.5in</Width>
+                          <ZIndex>14</ZIndex>
+                          <Style>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Image Name="image1">
+                          <Source>Embedded</Source>
+                          <Value>acelogo_medium</Value>
+                          <MIMEType>image/gif</MIMEType>
+                          <Sizing>Fit</Sizing>
+                          <Left>6.125in</Left>
+                          <Height>0.25in</Height>
+                          <Width>1.8125in</Width>
+                          <ZIndex>15</ZIndex>
+                          <Style />
+                        </Image>
+                        <Textbox Name="textbox1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>OSHA Inspection Report</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox1</rd:DefaultName>
+                          <Height>0.25in</Height>
+                          <Width>2in</Width>
+                          <ZIndex>16</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Subreport Name="subreport1">
+                          <ReportName>InspectionComponentFrequent</ReportName>
+                          <Parameters>
+                            <Parameter Name="EquipmentID">
+                              <Value>=Fields!InspectionEquipmentID.Value</Value>
+                            </Parameter>
+                            <Parameter Name="PreInspection">
+                              <Value>=Parameters!PreInspection.Value</Value>
+                            </Parameter>
+                          </Parameters>
+                          <KeepTogether>true</KeepTogether>
+                          <Top>2.5in</Top>
+                          <Height>0.25in</Height>
+                          <Width>8in</Width>
+                          <ZIndex>17</ZIndex>
+                          <Style />
+                        </Subreport>
+                        <Textbox Name="textbox29">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Parameters!PreInspection.Value = FALSE,"General Maintenance Concerns:","General Maintenance Concerns (Use back for additional comments):") &amp; Fields!GeneralComments.Value</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8.5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>1.625in</Top>
+                          <Height>0.875in</Height>
+                          <Width>8in</Width>
+                          <ZIndex>18</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="Sales Order - " &amp; First(Fields!SONum.Value, "WorkOrderDataSet")</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox4</rd:DefaultName>
+                          <Left>3in</Left>
+                          <Height>0.25in</Height>
+                          <Width>2.75in</Width>
+                          <ZIndex>19</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </ReportItems>
+                      <KeepTogether>true</KeepTogether>
+                      <Style />
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="list1_Details_Group">
+                <DocumentMapLabel>="Equipment Details - " &amp; Fields!EquipmentNo.Value</DocumentMapLabel>
+                <GroupExpressions>
+                  <GroupExpression>=Fields!EquipmentID.Value</GroupExpression>
+                </GroupExpressions>
+                <PageBreak>
+                  <BreakLocation>Between</BreakLocation>
+                </PageBreak>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!EquipmentNo.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>InspectionReportDataSet</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
+        <Height>2.75in</Height>
+        <Width>8in</Width>
+        <Style>
+          <BackgroundColor>White</BackgroundColor>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Height>2.75in</Height>
+    <Style />
+  </Body>
+  <ReportParameters>
+    <ReportParameter Name="InspectionID">
+      <DataType>String</DataType>
+      <Prompt>InspectionID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LocationID">
+      <DataType>String</DataType>
+      <Prompt>LocationID</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>LocationDataSet</DataSetName>
+          <ValueField>LocationID</ValueField>
+          <LabelField>Description</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="EquipmentID">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>EquipmentListDataSet</DataSetName>
+          <ValueField>EquipmentID</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>EquipmentID</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>EquipmentListDataSet</DataSetName>
+          <ValueField>EquipmentID</ValueField>
+          <LabelField>EquipmentNo</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="PreInspection">
+      <DataType>Boolean</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>false</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Pre-Inspection?</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Width>8in</Width>
+  <Page>
+    <LeftMargin>0.25in</LeftMargin>
+    <RightMargin>0.25in</RightMargin>
+    <TopMargin>0.25in</TopMargin>
+    <BottomMargin>0.25in</BottomMargin>
+    <Style>
+      <BackgroundColor>White</BackgroundColor>
+    </Style>
+  </Page>
+  <EmbeddedImages>
+    <EmbeddedImage Name="acelogo_medium">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>R0lGODlhegE3ANUAAAAAAMXFxf4AH0JCQq2trRkZGf/a4HZ8e/+Lnv4sSebm5v+9x1paWv4SOjMzM5mZmQgICPf399bW1mZmZr29vf///01TUikpKYyMjObs6/44UBAQECEhId7e3v4aQaSkpGZmZjo6Ov4JMkpKSszMzLW1tf9DY4SEhP6tu3Nzc5mZmf9thP/29/8AM/41V//p7P4VPP+Pof84WlJSUu/v73t7e/+zvwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAQUAP8ALAAAAAB6ATcAAAb/wIpwSCwaj8ikEpkhfWojB+dCrVqtjlHqUZJklsWIYkwum8/oNDlyFI/ZlYx8fqSthfO8/luUK2hMdEQKEoWGhQpEdnuMFWKMeXBCbgpwi5CCQ4SHholgSXZveHmARqGVih2ciJKfRQoBBA8YGCe2t7i5JxgPBBQSrkwPDA4FEADIycrLzAAbBQ4zJwGfH1fX2NnaVhRHDxcOFx8VNAMO5+cERifgDt0k6PHy0RhwHecXDHUjVBalJTMuFBhIcGA+YBUmtJsXL4QCawzjjXgwhAK+E44CRozniULAggXzUQtGpEY7agHkhUBIhEE7hDRqhOAA0uCAE63ABJC54Viz/58/N1yYQKCUqwgnCgBdyjRZCHVKTjSdSrXEEanIMFRQsGEZBz5DJiRTR4EqgBlsJCRzcESBUgAcABGYGrfCiKkQOmCgSrHCXGQTHF2Y2qFCAJ9LN7AkySBZt7LLBhhxkIyEo7tNR+REQmGA2c/ILmj9JCEE6NPIGGweshc1aqtGWgOgmOGtssBExCJTd9jsOAk+QxzJwCE0IM9Tx2Fu2uEB1Qts/gJI4Ygy84RUMZIU0hjZ42Z9h5gGAAHYB7OwldRwDXqApyQdBrMHjRaJ7PlVj8imbVtZt7BjGeYTBBwUaCAHXSWjD3DICGcEccZVIN9Zs9BSS3HI1JBQAQbaRv+ggRco4BwyGxxYIGIb
+FCYddRFYB8AAM4wg44wjzPDFeC9aaKGL+mxXQXcAfMdMAe9VMF55PyoDwQUmKqNdEing91mISiAnpVmjxXZlfloiwx8yNK0liW4A8OYTA36QkYEEy0nGIAAO9oEhdBFgWMARH0BwjIan0CDdDKckItsJgWYQAIYQWLZidcgUABYS421g1BCHHYPbdkAKCVeCAPQoxJHAWOkACTSUWqoCQF6K55ZmzZDEiKxORaR+sTKVHhH7xfHWCOclo6EQZJqZGhK9wVnBm3ESASEAdGK4AQEK6GGHGJMKAVmnXQKQZUvIJOpXMixaN6sS1kHwQLSkVDL/ho9JelfBtRNgtZt43QKDI1RFWHTOtkXQgGGttrYxIcBLhYcrwT/dyloyXwLA1gzJeIvdvMV6WoQECQqH7HBzAjKwiRxkMcFIRZSgYLb8ckciMIu2mAyMNMo4QF9WAlAAkyAOMMF/Pmb6roJ1JlOXkfUSTZ5lbUSw2hCwIvyTZEaY7PRSrmY7NTIKC5Frbciw1QFiUAcr4LBHYNzgscFxHKEFVOE7hNTYFiFbCgHUbTcBbzn6LTLhNoUbmUwZHIzP17oK93SfFn0k0uwud/UyKRoB+OPKcLDZfVdnXcHWbznAxn0UiV0xEmYbu/GDHVdAQn9AJSsE3BZrrSRQ1O2N/7jLTOEmwcBAXVDtJ4QnUzWQAFADqtES+0gD65QjMw4RuDevZGFyS+/2wl7q2jUcOEp6QICjl50x2shA/Urq5DwxQ4wzhsDpuG+fXH1TtdveN3kTpKD//ikQNUQEBKgBA9gnMw8txhXBQ0bV3CIm5CBpcW2o2y+IhRjpZegVnMKLnjbIQQ6ahWTY+8kFTlCDEprwhChMYQoPKLvscc1hcAjAbdZDsTNxxinkY5b4IlQCXzCOCAHIG/XiR7aDNYUDz2uZuH6XLx+W7V8/RKBjfqZApikDA915YDI0RwI9vQgJ0mHKBg0SgjKWkUkF2EBPqBI7GU5lBg+gAAnm
+SMc61v+RAg+o2U+ut7mlxI5dYODc9oYQJaGBzycjsJsiCeAiyXDFVx0ogwSA5LkIJAgCTLTTEF8nPyMyi4Aysg107McoZ0hAaahEJSAiMCEWVsBFSCtB/lJQpCMk8CxEWM4zimalEJDADB0gk2QysL/nNe0ndOuAMiNJg1RGIBTLpMDkmjGCIoQxKHx0xTSXIbg+AqVqgHSFIGH4P97VMGIdrGDcXGSzgmRQH0FDxghqgYvlwI+TRQxhykiQoAKoCFyltBnIDNQNF4UgFxiAWNEqUMjiLeGW4DxWBosGOAjURBmuUgvZMMeM+vmIhq1rxTGbkU1XLK9gVmNGRMO5hHF6jgj/hzukb4QAUqY8j51LGSVMO6nPI0SKZQCN3lLUodCmFKAUII2iESA6PyWZxywYKR1u5PUTpQbjkSH15NNYaheUNrUZK+UqEuSlFazqdAjEm9e1muIpBeC0GaoRwkh/0k24WWAdyXjS/8oFVMAIJjkViClQfsXQyjx0iteqJvTeirS0ijARb+oRVZmRl3AKlRkvDeFPUrYdxzFDry38SVjFaoRvUGEc5aBCfZQ1gIW4Q3UbiccMnqeJFFxAjbjFrQNwQoQ8GgMCuVUjB3h1hABUwaNyBccFuhkBl1wgBIWhgHIxEgGNxPYCsCHAAH4b3BLNrLdvsWpJqOAAlOBDVUJI/4k8EIKUEBijuyWaAPU6EAIqaGeykKvldvS4jMyG9ic8A+QDZsk//e0spcv4I2lNgcpJNNgIzpREhCecBEqYYWmBKgMT//dg6KUyaUrjcIgdMeEI9ysNTCykeEUs4Q57+MPQywCKw/Bg/CpjA/olCX+V4V9v/qSyCxbnUgYQAAoY+chITrKSkbziIDv5yVCO8hIywICuIEnKT7ZxMnDM0h2LSavM4DKWafU48435zGhOMyA1+qKlqZkkWiZRjoPh5UFqdkhzxjJHCWbmN/v5z3/OgAVGcIA8AxoMcXaGocFQZ3Le2Ssb1jPl
+FGsEFlj60pjOtKY3zelOe/rToA61qP9HTepSb1oIpk61qjNdgUSLGZCN7vGehRZpKc+6VpQuwgoS4IJe+/rXwA62sIdN7GIb+9jITrayl83sZjv72cdudWIWvYRYt+LWcKl1lLHNqlwTwQQCEIG4x03ucpv73OhOt7rXze52u/vd8I63vOdNb3ZLGyivZpe1wQzpP3N7S94eArjrTfCCG/zgCE+4whF+76BQu0pLkfVShvbmf18p4EJYgQZkwPGOe/zjIA+5yEdO8pKb/OQoT7nKV87ylrvc5A1vRr59tO9HK0Nvfra4lPo8hFX7/OdAD7rQh050osc8zNpegmf7e+1p+1uM6Yy61DcIAIwf+upYz7rWj77/DAgwYAIMCLvYx072sjOPx03H98OVEIFVGIIELMT2AFTh9rrbfe1bz7ve9x7ORF9N4kC5cjilFnVH21x4fE+84hefdb9PDfBA0RxJrsn0r6pUzQRgQAgYogUQfqBG6wu96GdQAxZKAIsjsIDqVV+jGoCwAwMMPQP0C4X1Ue8EoB/96FmS+c3PIwQj244CQk9YZU1gfSmQhDR9P48B0K0koB9iACbA/IZMID21173uPdF7hoTg+UNwvNMg/5Pis2uuX+Y3RtO8zc8Ooab4BiEG1NmM+pGAGX900UgaPcXCirGkpLMWR9ABCeI7QiB+s0EvyDAS6LcMo/FWPwEMDRV4/+mBgARDfs1wVuziWGhnecswWk9GeUCBEAhoPvfXNkJQOsqgMFaCNEW1FO9AFSHgZkbwJjy3FZ3DBieIF9TTgtrTFFzGf91CCDIYfhZUeUPQK0uBXCRRLD/RYz4GVmjGgT/xPAh4VDRlFj2igrRGBD5YAUVVIjUxENSghFVHdhOCc6ThEzfIQOQEf0wxGj7oRg1CdjjiUHe4FBlghiOAhlvGBxYIMD22Vt9EAX9QYhG2Jg9wdh2ofjwlZS5SAA+gSLEwIfcFLhRQAppYAhSAAZdEPUAiGh8w
+iqOIARMygxJFIsrgUV9YVBTwTKYSi58DUP1iG5u0BDY4HDkIhluGAf+UGAAngBi44YOJdQQu0g0BsIkUIC8jkImb6GMHYAqcQoJH2IgpSH8/cTPbYAUIMhU8h20cMAHiOI7kWI7maI4MkHxhMCG01VsbdInOcwRsQx7UU1ScpYQvVTpfpwwk04rJ4EqexITHYmQlQIMXExwKsEzKBAu7aCXmR0iIVwHEmAyaYQQdYGQE8CjWkgzo5WMCKQEECQeBWCs9xkrVGJGOSDAbkBPxJHiKYAiAyDC21C31mAycJR35mCAMcFJ25o98UyE6cgKw0TQhUHYn8AEAmQRv4gzw9WVWEmBEoIRVM4c8VnY18ADiJR0deR9FSXZHuRgjGStQSIWUw4Q6dyX/GugIznKLSSAvDxBhHeAspWCPqzJIpVNNZqgdPrkUiiVYzQABAqmU2NgML/WUYBSRPvg1b7QZWhk1eEFYfucAA2BGlFmZlmlGE4WEVnSSANCO/3U1aRlPkfMJ8gIN8mAb4FRU3WQ7OSlPQmAliiGRhsWLTFE1NJCHQAFCFPABBNCbHwBCS8kUhdl/RvAnrzmbZMlNxcmRpgCBzTASrtYBiDidqFRzmsCIVwNkKQkwobmWgZABIjkVOzkERXUAdGc3JCAvrVl110iRsokMLpgMz2WZDkBYEYAB/FATFaRXOGVmSyl1Tkmc1oSYs1kBDzADxQAS77ScfgVh+CkQIFFB/6Phanh3BNY5BN9TjaN1llISmvKRPEBUIAVQO+I3AkP0goNplwlCaVSVebNZVE1GDn8Qi6eiACSwHKz4gUTwJuX1iyXQkAHiDQQKn44wo7BYKjImAWQScI15YqVypDQgYwHgkAfodOF0oXjwL9IDQodHMGkpIeCyGRkaN/JiUbnVH5T2gsKZFiu6V0IzIfGJDEkpVwSxmkqoKv25o2xYB7u4HIBiClbSI3NIEAK5g0zKnHJTp0LKN1Wqdl0WcatBASlKMIHJ
+ofjxpTUTAqNXM1OVV3RXCM3hE1hIm1OxnrnmhMoQp1UHdmXHAN0gGxdAAEVmZLHgIh6FAQVmMLloBP9u+FKAEw2jNzDR+J4AYBnXsgG/mWRFdagNSgTyEquzSgG16iuN6nCPChRQOAQEkJkIo2CfOTVfaoETKpNGIB9iVlTOV2ApUFSmWgQT+KJTgRFmSB4edEXBsKuvsIvzGjDEahldpCT1iqhE0KRR2XUBmz1cpyQVagRYuqPz6DQQMKz2IT2Ww6vYeWO3Z5NHYK6eoJpHADcv9a9fpAhaSqRd1RRlxa2UNacXg0MWuYs04JzMMABw4IOXFXkMGjdEQIA8WK1/yZY6BqlLQAEMULJoOQEsa6nzUbFGQAIDoLKhwTPBqCereQF6Mi4Pe49fxk96Elbb2kEuOHUcNBoEYE7/SuIAAFg2G3SDcaknqFgBHTADUGsz4/maG4Q0JBACKbokN7lBHekXZhsxaDsEFymtvyitBomLhnu4MToEhvIANXB82je5upeOcZR0W7G4v7i5nNu5iiRHSiABPdSbpNubAdAKNjpHGpmCdAQHIGlkOZYBhos0EUBHQCsBdmQPdrS7qvs/sVC6pCtHiRsGdORKbTdHByS6wBu8t4i7c9QKJDC6wFsCpIIENGC71vu7yyu8jNe93vu94Bu+4ju+5Fu+5nu+6Ju+6ru+7Jt3L7AA8Bu/8ju/9Fu/9nu/+Ju/+ru//Nu//vu/ABzAAjzABFzABnzACIzAKLBwDNzADvzAeBAcwRI8wRRcweNmAx7QADCwwRzcwR78wSAcwiI8wiRcwiZ8wiicwiq8wizcwi78wjAcwzI8wzGMwTR8wzicwzq8wzzcwz78w0AcwwYQAwhQxEZ8xEicxEq8xEzcxE78xFAcxVI8xVRcxVZ8xVicxVq8xVzcxVwcBAA7</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportID>4e1e90dc-42a7-4fdc-89ca-dfeabd61166e</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>

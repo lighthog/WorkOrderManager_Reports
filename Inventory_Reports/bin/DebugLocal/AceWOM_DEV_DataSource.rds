@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="AceWOM_DEV_DataSource">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=VMDBSRV2.ACEWORLD.NET;Initial Catalog=AceWOM2;Integrated Security=True;</ConnectString>
+    <IntegratedSecurity>true</IntegratedSecurity>
+  </ConnectionProperties>
+  <DataSourceID>4b1805f0-1e4c-4188-a45b-a57baf1291d7</DataSourceID>
+</RptDataSource>

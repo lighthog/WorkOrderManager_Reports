@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <Description />
+  <DataSet Name="dsReportQuery">
+    <Query>
+      <DataSourceReference>AceWOM_DEV_DataSource</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@StartDate">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+        </DataSetParameter>
+        <DataSetParameter Name="@EndDate">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+        </DataSetParameter>
+        <DataSetParameter Name="@EmployeeID">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT EMP.EmployeeFullName, ETS.Date, ETS.Category, ISNULL(WO.WONum,'') AS WONum, 
+            ISNULL(CUST.CustomerName,'') AS CustomerName, Hours, ETS.Description 
+      FROM EmployeeTimeSalary ETS 
+      INNER JOIN Employee EMP ON ETS.EmployeeID = EMP.EmployeeID
+      LEFT OUTER JOIN WorkOrder WO ON WO.WONum = ETS.WONum
+      LEFT OUTER JOIN Customer CUST ON CUST.CustomerID = WO.CustomerID
+      WHERE ETS.Date BETWEEN @StartDate AND @EndDate 
+          AND ETS.EmployeeID = @EmployeeID</CommandText>
+      <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+    </Query>
+    <Fields>
+      <Field Name="EmployeeFullName">
+        <DataField>EmployeeFullName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Date">
+        <DataField>Date</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Category">
+        <DataField>Category</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="WONum">
+        <DataField>WONum</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CustomerName">
+        <DataField>CustomerName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Hours">
+        <DataField>Hours</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Description">
+        <DataField>Description</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

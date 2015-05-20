@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="AceWOMDataSource">
+      <rd:DataSourceID>55ce0cdd-f02f-40e5-b7ca-50eb511b61f5</rd:DataSourceID>
+      <DataSourceReference>AceWOMDataSource</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="WONum">
+      <DataType>String</DataType>
+      <Prompt>WONum</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>1in</RightMargin>
+  <LeftMargin>1in</LeftMargin>
+  <BottomMargin>1in</BottomMargin>
+  <rd:ReportID>79334158-dba3-423e-8624-e4e4974fdcca</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSetWorkOrderLabor">
+      <Fields>
+        <Field Name="TotalHoursOverWO">
+          <DataField>TotalHoursOverWO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalCostOverWorkOrder">
+          <DataField>TotalCostOverWorkOrder</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT        TotalHoursOverWO, TotalCostOverWorkOrder
+FROM            TotalHoursOverWorkOrder_2
+WHERE        (WONum = @WONum)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@WONum">
+            <Value>=Parameters!WONum.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="DataSetInvoicedSOs">
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT        CostAmt, MerchAmt, TaxAmt
+FROM            TSsoPastInvcHdr</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Width>6.5in</Width>
+  <Body>
+    <Height>2in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

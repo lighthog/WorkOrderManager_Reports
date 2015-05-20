@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="AceWOMDataSource">
+      <rd:DataSourceID>2340358b-380c-4f9f-aa55-ecb6b1ea5a0a</rd:DataSourceID>
+      <DataSourceReference>AceWOMDataSource</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="BeginDate">
+      <DataType>String</DataType>
+      <Prompt>BeginDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndDate">
+      <DataType>String</DataType>
+      <Prompt>EndDate</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>1in</RightMargin>
+  <LeftMargin>1in</LeftMargin>
+  <BottomMargin>1in</BottomMargin>
+  <rd:ReportID>58f2e3dd-bcd3-493a-8029-8c18031046a4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSetSales">
+      <Fields>
+        <Field Name="Salesman">
+          <DataField>Salesman</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Sales">
+          <DataField>Sales</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Cost">
+          <DataField>Cost</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="OrderCount">
+          <DataField>OrderCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandText>SELECT     Name AS Salesman, SUM(Sales) AS Sales, SUM(Cost) AS Cost, SUM(OrderCount) AS OrderCount
+FROM         (SELECT     U.Name, SUM(T.MerchAmt) AS Sales, SUM(T.CostAmt) AS Cost, COUNT(*) AS OrderCount, E.Position
+                       FROM          TSsoPastInvcHdr AS T INNER JOIN
+                                              aspnet_Users AS U ON U.TakeStockLogin = T.Slsp INNER JOIN
+                                              Employee AS E ON 'ACEWORLD\' + E.SQL_Login = U.UserName
+                       WHERE      (T.OrderDate &gt;= @BeginDate) AND (T.OrderDate &lt;= @EndDate) AND (E.Position = 'Salesperson (Inside)')
+                       GROUP BY T.Slsp, U.Name, E.Position
+                       UNION
+                       SELECT     U.Name, SUM(T.SOMerchAmt) AS Sales, SUM(T.SOCostAmt) AS Cost, COUNT(*) AS OrderCount, E.Position
+                       FROM         TSsoDocHdr AS T INNER JOIN
+                                             aspnet_Users AS U ON U.TakeStockLogin = T.Slsp INNER JOIN
+                                             Employee AS E ON 'ACEWORLD\' + E.SQL_Login = U.UserName
+                       WHERE     (T.OrderDate &gt;= @BeginDate) AND (T.OrderDate &lt;= @EndDate) AND (E.Position = 'Salesperson (Inside)') AND (T.DocType = 2)
+                       GROUP BY T.Slsp, U.Name, E.Position) AS A
+GROUP BY Name</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@BeginDate">
+            <Value>=Parameters!BeginDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Width>6.5in</Width>
+  <Body>
+    <Height>2in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>
