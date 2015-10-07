@@ -6,34 +6,34 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.65625in</Width>
+              <Width>0.69792in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.5625in</Width>
+              <Width>1.4375in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.84375in</Width>
+              <Width>0.85417in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.35417in</Width>
+              <Width>1.23958in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>4.61459in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.73958in</Width>
+              <Width>0.96875in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.1875in</Width>
+              <Width>1.15625in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.14583in</Width>
+              <Width>0.75in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.82292in</Width>
+              <Width>0.78125in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.55208in</Width>
+              <Width>3.35417in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -49,7 +49,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Job ID</Value>
+                              <Value>Task Id</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -59,7 +59,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Right</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -87,7 +87,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Job Name</Value>
+                              <Value>Branch</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -123,7 +123,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ship Date</Value>
+                              <Value>Due Date</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -132,7 +132,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox4</rd:DefaultName>
@@ -159,7 +161,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Engineer</Value>
+                              <Value>Assigned To</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -188,14 +190,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="textbox6">
+                    <Textbox Name="Textbox6">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>WONum</Value>
+                              <Value>Task Description</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -207,7 +209,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -231,7 +233,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>WOType</Value>
+                              <Value>Completed</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -240,7 +242,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox7</rd:DefaultName>
@@ -267,7 +271,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Budgeted Hrs</Value>
+                              <Value>Completed By</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -276,9 +280,7 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox8</rd:DefaultName>
@@ -305,7 +307,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Salaried Hrs</Value>
+                              <Value>WONum</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -315,7 +317,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Right</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -336,14 +338,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="textbox10">
+                    <Textbox Name="textbox11">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Variance</Value>
+                              <Value>CustNum</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -357,7 +359,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>textbox10</rd:DefaultName>
+                      <rd:DefaultName>textbox11</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -374,14 +376,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox11">
+                    <Textbox Name="textbox12">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>Customer</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -390,12 +392,10 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <rd:DefaultName>textbox12</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -417,23 +417,25 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CraneJobID">
+                    <Textbox Name="WorkOrderTaskId">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CraneJobID.Value</Value>
+                              <Value>=Fields!WorkOrderTaskId.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CraneJobID</rd:DefaultName>
+                      <rd:DefaultName>WorkOrderTaskId</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -449,14 +451,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="JobName">
+                    <Textbox Name="BranchName">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!JobName.Value</Value>
+                              <Value>=Fields!BranchName.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                               </Style>
@@ -465,7 +467,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>JobName</rd:DefaultName>
+                      <rd:DefaultName>BranchName</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -481,24 +483,26 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ShipDate">
+                    <Textbox Name="DueDate">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ShipDate.Value</Value>
+                              <Value>=Fields!DueDate.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <Format>MM/dd/yy</Format>
+                                <Format>M/d/yyyy</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ShipDate</rd:DefaultName>
+                      <rd:DefaultName>DueDate</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -546,6 +550,105 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Description1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Description.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Description1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="DateCompleted">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!DateCompleted.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>M/d/yyyy</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>DateCompleted</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="CompletedBy">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!CompletedBy.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>CompletedBy</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="WONum">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -559,7 +662,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>WONum</rd:DefaultName>
@@ -578,14 +683,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="WOType">
+                    <Textbox Name="CustomerID">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!WOType.Value</Value>
+                              <Value>=Fields!CustomerID.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                               </Style>
@@ -594,7 +699,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>WOType</rd:DefaultName>
+                      <rd:DefaultName>CustomerID</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -610,14 +715,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TotBudgetHours">
+                    <Textbox Name="CustomerName">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TotBudgetHours.Value</Value>
+                              <Value>=Fields!CustomerName.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                               </Style>
@@ -626,115 +731,12 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TotBudgetHours</rd:DefaultName>
+                      <rd:DefaultName>CustomerName</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="TotSalariedHours">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!TotSalariedHours.Value</Value>
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>TotSalariedHours</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Variance">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Variance.Value</Value>
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                                <Format>0.0 %</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Variance</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox12">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox12</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>=Switch(
-	Fields!Variance.Value &lt; 0.25, "Red", 
-	Fields!Variance.Value &lt; 0.50, "Orange", 
-	Fields!Variance.Value &gt; 2.0, "Red", 
-	Fields!Variance.Value &gt; 1.50, "Orange", 
-	True, "White")</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -781,10 +783,10 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
-        <Top>0.37389in</Top>
+        <DataSetName>dsMainQuery</DataSetName>
+        <Top>0.36in</Top>
         <Height>0.43in</Height>
-        <Width>11.86459in</Width>
+        <Width>15.85418in</Width>
         <Style />
       </Tablix>
       <Textbox Name="textbox1">
@@ -794,7 +796,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Crane Jobs: Budget vs. Salaried Time</Value>
+                <Value>Work Order To Do Items</Value>
                 <Style>
                   <FontFamily>Tahoma</FontFamily>
                   <FontSize>20pt</FontSize>
@@ -808,7 +810,7 @@
         </Paragraphs>
         <rd:DefaultName>textbox1</rd:DefaultName>
         <Height>0.36in</Height>
-        <Width>12.04167in</Width>
+        <Width>15.85417in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
@@ -818,10 +820,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>0.80389in</Height>
+    <Height>0.79in</Height>
     <Style />
   </Body>
-  <Width>12.04167in</Width>
+  <Width>15.85418in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -834,91 +836,113 @@
     <DataSource Name="AceWOMDataSource">
       <DataSourceReference>AceWOMDataSource</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>5e498ce0-54e1-49f1-ad2d-060a7278c847</rd:DataSourceID>
+      <rd:DataSourceID>92d613b5-0682-4531-9541-182af89402e8</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="dsMainQuery">
       <Query>
         <DataSourceName>AceWOMDataSource</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@branches">
+          <QueryParameter Name="@rpBranch">
             <Value>=Parameters!rpBranch.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
           </QueryParameter>
-          <QueryParameter Name="@employees">
-            <Value>=Parameters!rpEmployee.Value</Value>
+          <QueryParameter Name="@rpComplete">
+            <Value>=Parameters!rpComplete.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
           </QueryParameter>
-          <QueryParameter Name="@fromDate">
-            <Value>=Parameters!rpFromDate.Value</Value>
+          <QueryParameter Name="rpFromVal">
+            <Value>=Int(Split(Parameters!rpDueIn.Value,",")(0))</Value>
+            <rd:UserDefined>true</rd:UserDefined>
           </QueryParameter>
-          <QueryParameter Name="@toDate">
-            <Value>=Parameters!rpToDate.Value</Value>
+          <QueryParameter Name="rpToVal">
+            <Value>=Int(Split(Parameters!rpDueIn.Value,",")(1))</Value>
+            <rd:UserDefined>true</rd:UserDefined>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT CJ.CraneJobID, CJ.JobName, CJ.ShipDate, EMP.EmployeeFullName, WO.WONum, WO.WOType, B.BranchName,
-        (SELECT ISNULL(SUM(BudgetHours),0) FROM CraneEngDate WHERE CraneJobID = CJ.CraneJobID) AS TotBudgetHours,
-        (SELECT ISNULL(SUM(Hours),0) FROM EmployeeTimeSalary WHERE WONum = CJ.CSONum) AS TotSalariedHours,
-        ((SELECT ISNULL(SUM(Hours),0) FROM EmployeeTimeSalary WHERE WONum = CJ.CSONum)  / 
-        (SELECT ISNULL(SUM(BudgetHours),0) FROM CraneEngDate WHERE CraneJobID = CJ.CraneJobID)) AS Variance
-    FROM CraneJob CJ 
-    LEFT OUTER JOIN Employee EMP ON CJ.EmployeeID = EMP.EmployeeID
-    INNER JOIN WorkOrder WO ON WO.WONum = CJ.CSONum
-   INNER JOIN Branch B ON B.BranchID = WO.BranchID
-    WHERE Completed = 1
-        AND WO.BranchID IN (@branches) 
-        AND CJ.EmployeeID IN (@employees) 
-      AND ShipDate BETWEEN @fromDate AND @toDate
-      AND (SELECT ISNULL(SUM(BudgetHours),0) FROM CraneEngDate WHERE CraneJobID = CJ.CraneJobID) &gt; 0
-    ORDER BY CraneJobID DESC</CommandText>
+        <CommandText>-- This part only gets those tasks linked to a work order
+SELECT TOP 200 WOT.WorkOrderTaskId, B.BranchName,  WOT.DueDate, EMP.EmployeeFullName, WOT.Complete, 
+                            WOT.DateCompleted, WOT.CompletedBy, WO.WONum,  dbo.Ellipses(WOT.Description, 120) AS Description, 
+                            WO.CustomerID, C.CustomerName
+	FROM WorkOrderTask WOT
+	INNER JOIN Employee EMP ON EMP.EmployeeID = WOT.AssignedTo
+	INNER JOIN WorkOrder WO ON WO.WONum = WOT.WONum 
+	INNER JOIN Branch B ON B.BranchID = WO.BranchID 
+	LEFT OUTER JOIN Customer C ON C.CustomerID = WO.CustomerID 
+	WHERE B.BranchID IN (@rpBranch)
+	  AND WOT.Complete IN (@rpComplete)
+	  AND DueDate BETWEEN DateAdd(d, @rpFromVal, GetDate()) AND DateAdd(d, @rpToVal, GetDate()) 
+
+UNION    -- This part gets those not connected to a work order
+
+SELECT TOP 200 WOT.WorkOrderTaskId, B.BranchName,  WOT.DueDate, EMP.EmployeeFullName, WOT.Complete, 
+                            WOT.DateCompleted, WOT.CompletedBy, WOT.WONum,  dbo.Ellipses(WOT.Description, 120) AS Description, 
+                            NULL AS CustomerID, '' AS CustomerName
+	FROM WorkOrderTask WOT
+	INNER JOIN Employee EMP ON EMP.EmployeeID = WOT.AssignedTo
+	LEFT OUTER JOIN Branch B ON B.BranchID = EMP.BranchID 
+	WHERE WOT.WONum IS NULL
+	  AND B.BranchID IN (@rpBranch)
+	  AND WOT.Complete IN (@rpComplete)
+	  AND DueDate BETWEEN DateAdd(d, @rpFromVal, GetDate()) AND DateAdd(d, @rpToVal, GetDate()) 
+      ORDER BY DueDate ASC </CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
-        <Field Name="CraneJobID">
-          <DataField>CraneJobID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="JobName">
-          <DataField>JobName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ShipDate">
-          <DataField>ShipDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="EmployeeFullName">
-          <DataField>EmployeeFullName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="WONum">
-          <DataField>WONum</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="WOType">
-          <DataField>WOType</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TotBudgetHours">
-          <DataField>TotBudgetHours</DataField>
+        <Field Name="WorkOrderTaskId">
+          <DataField>WorkOrderTaskId</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="BranchName">
           <DataField>BranchName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="TotSalariedHours">
-          <DataField>TotSalariedHours</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+        <Field Name="DueDate">
+          <DataField>DueDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="Variance">
-          <DataField>Variance</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+        <Field Name="EmployeeFullName">
+          <DataField>EmployeeFullName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Complete">
+          <DataField>Complete</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="DateCompleted">
+          <DataField>DateCompleted</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CompletedBy">
+          <DataField>CompletedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WONum">
+          <DataField>WONum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerID">
+          <DataField>CustomerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="dsBranch">
+    <DataSet Name="dsBranches">
       <Query>
         <DataSourceName>AceWOMDataSource</DataSourceName>
-        <CommandText>SELECT BranchID, BranchName FROM Branch WHERE BranchID != '%%'</CommandText>
+        <CommandText>SELECT BranchID, BranchName 
+     FROM Branch 
+     Where BranchName != 'All'
+     ORDER BY BranchName</CommandText>
       </Query>
       <Fields>
         <Field Name="BranchID">
@@ -931,62 +955,73 @@
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="dsEmployees">
-      <Query>
-        <DataSourceName>AceWOMDataSource</DataSourceName>
-        <CommandText>SELECT DISTINCT E.EmployeeID, E.EmployeeFullName 
-	FROM Employee E
-	INNER JOIN CraneJob CJ ON CJ.EmployeeID = E.EmployeeID
-	ORDER BY EmployeeFullName</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="EmployeeID">
-          <DataField>EmployeeID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="EmployeeFullName">
-          <DataField>EmployeeFullName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="rpBranch">
       <DataType>String</DataType>
-      <Prompt>Branch: </Prompt>
+      <Prompt>Branch(es): </Prompt>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>dsBranch</DataSetName>
+          <DataSetName>dsBranches</DataSetName>
           <ValueField>BranchID</ValueField>
           <LabelField>BranchName</LabelField>
         </DataSetReference>
       </ValidValues>
       <MultiValue>true</MultiValue>
     </ReportParameter>
-    <ReportParameter Name="rpEmployee">
+    <ReportParameter Name="rpComplete">
       <DataType>String</DataType>
-      <Prompt>Engineer: </Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>0</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Status: </Prompt>
       <ValidValues>
-        <DataSetReference>
-          <DataSetName>dsEmployees</DataSetName>
-          <ValueField>EmployeeID</ValueField>
-          <LabelField>EmployeeFullName</LabelField>
-        </DataSetReference>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>Complete</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>0</Value>
+            <Label>Incomplete</Label>
+          </ParameterValue>
+        </ParameterValues>
       </ValidValues>
       <MultiValue>true</MultiValue>
     </ReportParameter>
-    <ReportParameter Name="rpFromDate">
-      <DataType>DateTime</DataType>
-      <Prompt>From:</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="rpToDate">
-      <DataType>DateTime</DataType>
-      <Prompt>To:</Prompt>
+    <ReportParameter Name="rpDueIn">
+      <DataType>String</DataType>
+      <Prompt>Due In: </Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>-100,0</Value>
+            <Label>Overdue</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>0,7</Value>
+            <Label>the next week</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>0,14</Value>
+            <Label>the next two weeks</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>0,31</Value>
+            <Label>the next month</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>0,61</Value>
+            <Label>the next two months</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
     </ReportParameter>
   </ReportParameters>
   <Language>en-US</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>3bc42032-9baf-4617-a674-c1c10f2c97a9</rd:ReportID>
+  <rd:ReportID>2f599c25-857a-4165-a596-ba0fc9c59284</rd:ReportID>
 </Report>

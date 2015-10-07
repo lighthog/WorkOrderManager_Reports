@@ -207,6 +207,10 @@
       <FullPath>VehicleInspectionReportDaily.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>WorkOrderToDoItems.rdl</Name>
+      <FullPath>WorkOrderToDoItems.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>WorkOrderBudgetingReport.rdl</Name>
       <FullPath>WorkOrderBudgetingReport.rdl</FullPath>
     </ProjectItem>

@@ -3611,7 +3611,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Jobs Complete Yesterday</Value>
+                <Value>Jobs Marked Complete, Work Order Still Open</Value>
                 <Style>
                   <FontFamily>Tahoma</FontFamily>
                   <FontSize>16pt</FontSize>
@@ -3989,22 +3989,20 @@ SELECT B.BranchID + ' ' +B.BranchName AS BranchName, E.EmployeeFullName, TLI.WON
       <Query>
         <DataSourceName>AceWOMDataSource</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@BaseDate">
-            <Value>=Parameters!BaseDate.Value</Value>
-          </QueryParameter>
           <QueryParameter Name="@BranchIDs">
             <Value>=Parameters!BranchIDs.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT B.BranchName, WO.Status, WO.WONum, WO.WOType, WO.Description, C.CustomerName, WD.last_modified 
+        <CommandText>SELECT DISTINCT B.BranchName, WO.Status, WO.WONum, WO.WOType, WO.Description, C.CustomerName, MAX(WD.last_modified) AS Last_Modified
 	FROM TimeLineItemWorkDetail WD
 	INNER JOIN TimeLineItem TLI ON WD.TimeLineItemID = TLI.TimeLineItemID
 	INNER JOIN WorkOrder WO ON WO.WONum = TLI.WONum
 	INNER JOIN Customer C ON C.CustomerID = WO.CustomerID
 	INNER JOIN Branch B ON B.BranchID = WO.BranchID
-	WHERE WD.JobComplete = 1 
-	    AND  CAST(WD.last_modified AS Date) = DATEADD(d,-1,CAST(@BaseDate AS DATE))
-	  AND WO.BranchID IN (SELECT Param FROM dbo.fn_MVParam(@BranchIDs,','))</CommandText>
+	WHERE WD.JobComplete = 1 AND WO.Status NOT LIKE 'Finished%' AND WO.DateClosed IS NULL 
+                   AND WO.last_modified &gt; DateAdd(d, -500, GetDate()) 
+	  AND WO.BranchID IN (SELECT Param FROM dbo.fn_MVParam(@BranchIDs,','))
+	GROUP BY B.BranchName, WO.Status, WO.WONum, WO.WOType, WO.Description, C.CustomerName</CommandText>
       </Query>
       <Fields>
         <Field Name="BranchName">
@@ -4032,7 +4030,7 @@ SELECT B.BranchID + ' ' +B.BranchName AS BranchName, E.EmployeeFullName, TLI.WON
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="last_modified">
-          <DataField>last_modified</DataField>
+          <DataField>Last_Modified</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
