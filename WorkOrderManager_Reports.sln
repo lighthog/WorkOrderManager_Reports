@@ -1,11 +1,17 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "WorkOrderManager_Reports", "WorkOrderManager_Reports\WorkOrderManager_Reports.rptproj", "{4B796A67-F4D2-44B2-8948-80614A35E95D}"
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Inventory_Reports", "Inventory_Reports\Inventory_Reports.rptproj", "{301AB837-B00E-4658-B9F4-3BFB049BFE86}"
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "WOM_Dashboard_Reports", "WOM_Dashboard_Reports\WOM_Dashboard_Reports.rptproj", "{10432CBA-B235-44F5-A159-52C1FEDF716D}"
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Business Intelligence", "Business Intelligence\Business Intelligence.rptproj", "{0518838E-FC37-4E1D-9452-9BCFA8D8BE42}"
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Work_Order_History_Reports", "Work Order History Reports\Work_Order_History_Reports.rptproj", "{1B840BAF-8444-4E7D-A0CE-834F21C98D54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +44,22 @@ Global
 		{10432CBA-B235-44F5-A159-52C1FEDF716D}.Release|Default.ActiveCfg = Release
 		{10432CBA-B235-44F5-A159-52C1FEDF716D}.Release|Default.Build.0 = Release
 		{10432CBA-B235-44F5-A159-52C1FEDF716D}.Release|Default.Deploy.0 = Release
+		{0518838E-FC37-4E1D-9452-9BCFA8D8BE42}.Debug|Default.ActiveCfg = Debug
+		{0518838E-FC37-4E1D-9452-9BCFA8D8BE42}.Debug|Default.Build.0 = Debug
+		{0518838E-FC37-4E1D-9452-9BCFA8D8BE42}.Debug|Default.Deploy.0 = Debug
+		{0518838E-FC37-4E1D-9452-9BCFA8D8BE42}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{0518838E-FC37-4E1D-9452-9BCFA8D8BE42}.DebugLocal|Default.Build.0 = DebugLocal
+		{0518838E-FC37-4E1D-9452-9BCFA8D8BE42}.Release|Default.ActiveCfg = Release
+		{0518838E-FC37-4E1D-9452-9BCFA8D8BE42}.Release|Default.Build.0 = Release
+		{0518838E-FC37-4E1D-9452-9BCFA8D8BE42}.Release|Default.Deploy.0 = Release
+		{1B840BAF-8444-4E7D-A0CE-834F21C98D54}.Debug|Default.ActiveCfg = Debug
+		{1B840BAF-8444-4E7D-A0CE-834F21C98D54}.Debug|Default.Build.0 = Debug
+		{1B840BAF-8444-4E7D-A0CE-834F21C98D54}.Debug|Default.Deploy.0 = Debug
+		{1B840BAF-8444-4E7D-A0CE-834F21C98D54}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{1B840BAF-8444-4E7D-A0CE-834F21C98D54}.DebugLocal|Default.Build.0 = DebugLocal
+		{1B840BAF-8444-4E7D-A0CE-834F21C98D54}.Release|Default.ActiveCfg = Release
+		{1B840BAF-8444-4E7D-A0CE-834F21C98D54}.Release|Default.Build.0 = Release
+		{1B840BAF-8444-4E7D-A0CE-834F21C98D54}.Release|Default.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

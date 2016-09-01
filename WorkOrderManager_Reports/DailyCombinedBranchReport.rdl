@@ -3687,7 +3687,7 @@ SELECT B.BranchID + ' ' +B.BranchName AS BranchName, E.EmployeeFullName, TLI.WON
 	LEFT OUTER JOIN Customer C ON WO.CustomerID = C.CustomerID 
 	LEFT OUTER JOIN TimeLineItemWorkDetail TLIWD ON TLI.TimeLineItemID = TLIWD.TimeLineItemID
 	WHERE (CAST(TLI.BeginTime AS DATE) = CAST(DateAdd(d, -1, @BaseDate) AS DATE))
-	  AND  (E.Position = 'Service Technician')
+	   AND  (E.Position LIKE 'Service %')
 	  AND  (B.BranchID IN (SELECT Param FROM dbo.fn_MVParam(@BranchIDs,',')))</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>

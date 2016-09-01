@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="AceWOMDataSource">
+      <rd:DataSourceID>7186765e-92cc-41a8-b816-5bf030122666</rd:DataSourceID>
+      <DataSourceReference>AceWOMDataSource</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <rd:ReportID>c69c721f-93a7-4c01-959b-b9753365b4c8</rd:ReportID>
+  <Width>5in</Width>
+  <Body>
+    <Height>5.79in</Height>
+    <ColumnSpacing>0.5in</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>20pt</FontSize>
+          <Color>SteelBlue</Color>
+          <FontWeight>Bold</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Value>Report1</Value>
+        <CanGrow>true</CanGrow>
+        <Height>0.36in</Height>
+      </Textbox>
+      <List Name="List1">
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>14pt</FontSize>
+          <Color>SlateGray</Color>
+        </Style>
+        <ReportItems>
+          <Textbox Name="AceID">
+            <Style>
+              <FontFamily>Tahoma</FontFamily>
+              <FontSize>14pt</FontSize>
+              <Color>SlateGray</Color>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <rd:DefaultName>AceID</rd:DefaultName>
+            <Value>=Fields!AceID.Value</Value>
+            <CanGrow>true</CanGrow>
+            <Height>0.27in</Height>
+          </Textbox>
+          <List Name="List2">
+            <Style>
+              <FontFamily>Tahoma</FontFamily>
+              <FontSize>12pt</FontSize>
+            </Style>
+            <ReportItems>
+              <Textbox Name="CustomerID">
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+                <rd:DefaultName>CustomerID</rd:DefaultName>
+                <Value>=Fields!CustomerID.Value</Value>
+                <CanGrow>true</CanGrow>
+                <Height>0.24in</Height>
+              </Textbox>
+              <List Name="List3">
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>10pt</FontSize>
+                </Style>
+                <ReportItems>
+                  <Textbox Name="CustomerName">
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                    <rd:DefaultName>CustomerName</rd:DefaultName>
+                    <Value>=Fields!CustomerName.Value</Value>
+                    <CanGrow>true</CanGrow>
+                    <Height>0.21in</Height>
+                  </Textbox>
+                  <List Name="List4">
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontSize>10pt</FontSize>
+                    </Style>
+                    <ReportItems>
+                      <Textbox Name="SiteLocations">
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontSize>10pt</FontSize>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                        <rd:DefaultName>SiteLocations</rd:DefaultName>
+                        <Value>=Fields!SiteLocations.Value</Value>
+                        <CanGrow>true</CanGrow>
+                        <Height>0.21in</Height>
+                      </Textbox>
+                      <List Name="List5">
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontSize>10pt</FontSize>
+                        </Style>
+                        <ReportItems>
+                          <Textbox Name="Status">
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>10pt</FontSize>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                            <rd:DefaultName>Status</rd:DefaultName>
+                            <Value>=Fields!Status.Value</Value>
+                            <CanGrow>true</CanGrow>
+                            <Height>0.21in</Height>
+                          </Textbox>
+                          <List Name="List6">
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>10pt</FontSize>
+                            </Style>
+                            <ReportItems>
+                              <Textbox Name="WONum">
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontSize>10pt</FontSize>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                                <rd:DefaultName>WONum</rd:DefaultName>
+                                <Value>=Fields!WONum.Value</Value>
+                                <CanGrow>true</CanGrow>
+                                <Height>0.21in</Height>
+                              </Textbox>
+                              <List Name="List7">
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontSize>10pt</FontSize>
+                                </Style>
+                                <ReportItems>
+                                  <Textbox Name="InspectionType">
+                                    <Style>
+                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontSize>10pt</FontSize>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                    <rd:DefaultName>InspectionType</rd:DefaultName>
+                                    <Value>=Fields!InspectionType.Value</Value>
+                                    <CanGrow>true</CanGrow>
+                                    <Height>0.21in</Height>
+                                  </Textbox>
+                                  <List Name="List8">
+                                    <Style>
+                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontSize>10pt</FontSize>
+                                    </Style>
+                                    <ReportItems>
+                                      <Textbox Name="InspectionID">
+                                        <Style>
+                                          <FontFamily>Tahoma</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                        <rd:DefaultName>InspectionID</rd:DefaultName>
+                                        <Value>=Fields!InspectionID.Value</Value>
+                                        <CanGrow>true</CanGrow>
+                                        <Height>0.21in</Height>
+                                      </Textbox>
+                                      <List Name="List9">
+                                        <Style>
+                                          <FontFamily>Tahoma</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                        </Style>
+                                        <ReportItems>
+                                          <Textbox Name="EquipCount">
+                                            <Style>
+                                              <FontFamily>Tahoma</FontFamily>
+                                              <FontSize>10pt</FontSize>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                            <rd:DefaultName>EquipCount</rd:DefaultName>
+                                            <Value>=Fields!EquipCount.Value</Value>
+                                            <CanGrow>true</CanGrow>
+                                            <Height>0.21in</Height>
+                                          </Textbox>
+                                          <List Name="List10">
+                                            <Style>
+                                              <FontFamily>Tahoma</FontFamily>
+                                              <FontSize>10pt</FontSize>
+                                            </Style>
+                                            <ReportItems>
+                                              <Textbox Name="InspectionDate">
+                                                <Style>
+                                                  <FontFamily>Tahoma</FontFamily>
+                                                  <FontSize>10pt</FontSize>
+                                                  <PaddingLeft>2pt</PaddingLeft>
+                                                  <PaddingRight>2pt</PaddingRight>
+                                                  <PaddingTop>2pt</PaddingTop>
+                                                  <PaddingBottom>2pt</PaddingBottom>
+                                                </Style>
+                                                <rd:DefaultName>InspectionDate</rd:DefaultName>
+                                                <Value>=Fields!InspectionDate.Value</Value>
+                                                <CanGrow>true</CanGrow>
+                                                <Height>0.21in</Height>
+                                              </Textbox>
+                                              <Table Name="table1">
+                                                <Top>0.5in</Top>
+                                                <Style />
+                                                <Header>
+                                                  <RepeatOnNewPage>true</RepeatOnNewPage>
+                                                  <TableRows>
+                                                    <TableRow>
+                                                      <TableCells>
+                                                        <TableCell>
+                                                          <ReportItems>
+                                                            <Textbox Name="textbox2">
+                                                              <Style>
+                                                                <BackgroundColor>SteelBlue</BackgroundColor>
+                                                                <FontFamily>Tahoma</FontFamily>
+                                                                <FontSize>11pt</FontSize>
+                                                                <FontWeight>Bold</FontWeight>
+                                                                <Color>White</Color>
+                                                                <BorderStyle>
+                                                                  <Default>Solid</Default>
+                                                                </BorderStyle>
+                                                                <BorderColor>
+                                                                  <Default>LightGrey</Default>
+                                                                </BorderColor>
+                                                                <PaddingLeft>2pt</PaddingLeft>
+                                                                <PaddingRight>2pt</PaddingRight>
+                                                                <PaddingTop>2pt</PaddingTop>
+                                                                <PaddingBottom>2pt</PaddingBottom>
+                                                              </Style>
+                                                              <rd:DefaultName>textbox2</rd:DefaultName>
+                                                              <Value>Position</Value>
+                                                              <CanGrow>true</CanGrow>
+                                                              <Height>0.22in</Height>
+                                                              <Width>1in</Width>
+                                                            </Textbox>
+                                                          </ReportItems>
+                                                        </TableCell>
+                                                        <TableCell>
+                                                          <ReportItems>
+                                                            <Textbox Name="textbox3">
+                                                              <Style>
+                                                                <BackgroundColor>SteelBlue</BackgroundColor>
+                                                                <FontFamily>Tahoma</FontFamily>
+                                                                <FontSize>11pt</FontSize>
+                                                                <FontWeight>Bold</FontWeight>
+                                                                <Color>White</Color>
+                                                                <BorderStyle>
+                                                                  <Default>Solid</Default>
+                                                                </BorderStyle>
+                                                                <BorderColor>
+                                                                  <Default>LightGrey</Default>
+                                                                </BorderColor>
+                                                                <TextAlign>Right</TextAlign>
+                                                                <PaddingLeft>2pt</PaddingLeft>
+                                                                <PaddingRight>2pt</PaddingRight>
+                                                                <PaddingTop>2pt</PaddingTop>
+                                                                <PaddingBottom>2pt</PaddingBottom>
+                                                              </Style>
+                                                              <rd:DefaultName>textbox3</rd:DefaultName>
+                                                              <Value>Tot Hours</Value>
+                                                              <CanGrow>true</CanGrow>
+                                                              <Height>0.22in</Height>
+                                                              <Width>1in</Width>
+                                                            </Textbox>
+                                                          </ReportItems>
+                                                        </TableCell>
+                                                      </TableCells>
+                                                      <Height>0.22in</Height>
+                                                    </TableRow>
+                                                  </TableRows>
+                                                </Header>
+                                                <Details>
+                                                  <TableRows>
+                                                    <TableRow>
+                                                      <TableCells>
+                                                        <TableCell>
+                                                          <ReportItems>
+                                                            <Textbox Name="Position">
+                                                              <Style>
+                                                                <FontFamily>Tahoma</FontFamily>
+                                                                <FontSize>10pt</FontSize>
+                                                                <BorderStyle>
+                                                                  <Default>Solid</Default>
+                                                                </BorderStyle>
+                                                                <BorderColor>
+                                                                  <Default>LightGrey</Default>
+                                                                </BorderColor>
+                                                                <PaddingLeft>2pt</PaddingLeft>
+                                                                <PaddingRight>2pt</PaddingRight>
+                                                                <PaddingTop>2pt</PaddingTop>
+                                                                <PaddingBottom>2pt</PaddingBottom>
+                                                              </Style>
+                                                              <rd:DefaultName>Position</rd:DefaultName>
+                                                              <Value>=Fields!Position.Value</Value>
+                                                              <CanGrow>true</CanGrow>
+                                                              <Height>0.21in</Height>
+                                                              <Width>1in</Width>
+                                                            </Textbox>
+                                                          </ReportItems>
+                                                        </TableCell>
+                                                        <TableCell>
+                                                          <ReportItems>
+                                                            <Textbox Name="TotHours">
+                                                              <Style>
+                                                                <FontFamily>Tahoma</FontFamily>
+                                                                <FontSize>10pt</FontSize>
+                                                                <BorderStyle>
+                                                                  <Default>Solid</Default>
+                                                                </BorderStyle>
+                                                                <BorderColor>
+                                                                  <Default>LightGrey</Default>
+                                                                </BorderColor>
+                                                                <PaddingLeft>2pt</PaddingLeft>
+                                                                <PaddingRight>2pt</PaddingRight>
+                                                                <PaddingTop>2pt</PaddingTop>
+                                                                <PaddingBottom>2pt</PaddingBottom>
+                                                              </Style>
+                                                              <rd:DefaultName>TotHours</rd:DefaultName>
+                                                              <Value>=Fields!TotHours.Value</Value>
+                                                              <CanGrow>true</CanGrow>
+                                                              <Height>0.21in</Height>
+                                                              <Width>1in</Width>
+                                                            </Textbox>
+                                                          </ReportItems>
+                                                        </TableCell>
+                                                      </TableCells>
+                                                      <Height>0.21in</Height>
+                                                    </TableRow>
+                                                  </TableRows>
+                                                </Details>
+                                                <TableColumns>
+                                                  <TableColumn>
+                                                    <Width>1in</Width>
+                                                  </TableColumn>
+                                                  <TableColumn>
+                                                    <Width>1in</Width>
+                                                  </TableColumn>
+                                                </TableColumns>
+                                                <DataSetName>DataSet1</DataSetName>
+                                              </Table>
+                                            </ReportItems>
+                                            <Grouping Name="list1_InspectionDate">
+                                              <GroupExpressions>
+                                                <GroupExpression>=Fields!InspectionDate.Value</GroupExpression>
+                                              </GroupExpressions>
+                                              <PageBreakAtEnd>true</PageBreakAtEnd>
+                                            </Grouping>
+                                            <Sorting>
+                                              <SortBy>
+                                                <SortExpression>=Fields!InspectionDate.Value</SortExpression>
+                                              </SortBy>
+                                            </Sorting>
+                                            <Top>0.5in</Top>
+                                            <DataSetName>DataSet1</DataSetName>
+                                          </List>
+                                        </ReportItems>
+                                        <Grouping Name="list1_EquipCount">
+                                          <GroupExpressions>
+                                            <GroupExpression>=Fields!EquipCount.Value</GroupExpression>
+                                          </GroupExpressions>
+                                          <PageBreakAtEnd>true</PageBreakAtEnd>
+                                        </Grouping>
+                                        <Sorting>
+                                          <SortBy>
+                                            <SortExpression>=Fields!EquipCount.Value</SortExpression>
+                                          </SortBy>
+                                        </Sorting>
+                                        <Top>0.5in</Top>
+                                        <DataSetName>DataSet1</DataSetName>
+                                      </List>
+                                    </ReportItems>
+                                    <Grouping Name="list1_InspectionID">
+                                      <GroupExpressions>
+                                        <GroupExpression>=Fields!InspectionID.Value</GroupExpression>
+                                      </GroupExpressions>
+                                      <PageBreakAtEnd>true</PageBreakAtEnd>
+                                    </Grouping>
+                                    <Sorting>
+                                      <SortBy>
+                                        <SortExpression>=Fields!InspectionID.Value</SortExpression>
+                                      </SortBy>
+                                    </Sorting>
+                                    <Top>0.5in</Top>
+                                    <DataSetName>DataSet1</DataSetName>
+                                  </List>
+                                </ReportItems>
+                                <Grouping Name="list1_InspectionType">
+                                  <GroupExpressions>
+                                    <GroupExpression>=Fields!InspectionType.Value</GroupExpression>
+                                  </GroupExpressions>
+                                  <PageBreakAtEnd>true</PageBreakAtEnd>
+                                </Grouping>
+                                <Sorting>
+                                  <SortBy>
+                                    <SortExpression>=Fields!InspectionType.Value</SortExpression>
+                                  </SortBy>
+                                </Sorting>
+                                <Top>0.5in</Top>
+                                <DataSetName>DataSet1</DataSetName>
+                              </List>
+                            </ReportItems>
+                            <Grouping Name="list1_WONum">
+                              <GroupExpressions>
+                                <GroupExpression>=Fields!WONum.Value</GroupExpression>
+                              </GroupExpressions>
+                              <PageBreakAtEnd>true</PageBreakAtEnd>
+                            </Grouping>
+                            <Sorting>
+                              <SortBy>
+                                <SortExpression>=Fields!WONum.Value</SortExpression>
+                              </SortBy>
+                            </Sorting>
+                            <Top>0.5in</Top>
+                            <DataSetName>DataSet1</DataSetName>
+                          </List>
+                        </ReportItems>
+                        <Grouping Name="list1_Status">
+                          <GroupExpressions>
+                            <GroupExpression>=Fields!Status.Value</GroupExpression>
+                          </GroupExpressions>
+                          <PageBreakAtEnd>true</PageBreakAtEnd>
+                        </Grouping>
+                        <Sorting>
+                          <SortBy>
+                            <SortExpression>=Fields!Status.Value</SortExpression>
+                          </SortBy>
+                        </Sorting>
+                        <Top>0.5in</Top>
+                        <DataSetName>DataSet1</DataSetName>
+                      </List>
+                    </ReportItems>
+                    <Grouping Name="list1_SiteLocations">
+                      <GroupExpressions>
+                        <GroupExpression>=Fields!SiteLocations.Value</GroupExpression>
+                      </GroupExpressions>
+                      <PageBreakAtEnd>true</PageBreakAtEnd>
+                    </Grouping>
+                    <Sorting>
+                      <SortBy>
+                        <SortExpression>=Fields!SiteLocations.Value</SortExpression>
+                      </SortBy>
+                    </Sorting>
+                    <Top>0.5in</Top>
+                    <DataSetName>DataSet1</DataSetName>
+                  </List>
+                </ReportItems>
+                <Grouping Name="list1_CustomerName">
+                  <GroupExpressions>
+                    <GroupExpression>=Fields!CustomerName.Value</GroupExpression>
+                  </GroupExpressions>
+                  <PageBreakAtEnd>true</PageBreakAtEnd>
+                </Grouping>
+                <Sorting>
+                  <SortBy>
+                    <SortExpression>=Fields!CustomerName.Value</SortExpression>
+                  </SortBy>
+                </Sorting>
+                <Top>0.5in</Top>
+                <DataSetName>DataSet1</DataSetName>
+              </List>
+            </ReportItems>
+            <Grouping Name="list1_CustomerID">
+              <GroupExpressions>
+                <GroupExpression>=Fields!CustomerID.Value</GroupExpression>
+              </GroupExpressions>
+              <PageBreakAtEnd>true</PageBreakAtEnd>
+            </Grouping>
+            <Sorting>
+              <SortBy>
+                <SortExpression>=Fields!CustomerID.Value</SortExpression>
+              </SortBy>
+            </Sorting>
+            <Top>0.5in</Top>
+            <DataSetName>DataSet1</DataSetName>
+          </List>
+        </ReportItems>
+        <Grouping Name="list1_AceID">
+          <GroupExpressions>
+            <GroupExpression>=Fields!AceID.Value</GroupExpression>
+          </GroupExpressions>
+          <PageBreakAtEnd>true</PageBreakAtEnd>
+        </Grouping>
+        <Sorting>
+          <SortBy>
+            <SortExpression>=Fields!AceID.Value</SortExpression>
+          </SortBy>
+        </Sorting>
+        <Top>0.36in</Top>
+        <DataSetName>DataSet1</DataSetName>
+      </List>
+    </ReportItems>
+  </Body>
+  <Language>en-US</Language>
+  <LeftMargin>1in</LeftMargin>
+  <RightMargin>1in</RightMargin>
+  <TopMargin>1in</TopMargin>
+  <BottomMargin>1in</BottomMargin>
+  <PageWidth>8.5in</PageWidth>
+  <PageHeight>11in</PageHeight>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="AceID">
+          <DataField>AceID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerID">
+          <DataField>CustomerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SiteLocations">
+          <DataField>SiteLocations</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WONum">
+          <DataField>WONum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InspectionType">
+          <DataField>InspectionType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InspectionID">
+          <DataField>InspectionID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EquipCount">
+          <DataField>EquipCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="InspectionDate">
+          <DataField>InspectionDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Position">
+          <DataField>Position</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TotHours">
+          <DataField>TotHours</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AceWOMDataSource</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>SELECT CUST.AceID, CUST.CustomerID, CUST.CustomerName,
+           dbo.InspectionLocationList(INSP.InspectionID) AS SiteLocations, 
+            WO.Status, WO.WONum, InspectionType,  INSP.InspectionID, 
+            (SELECT COUNT(*) FROM InspectionEquipment WHERE InspectioNID = INSP.InspectionID) AS EquipCount,
+	INSP.InspectionDate, EMP.Position, SUM(TLI.HourDiff) AS TotHours
+      FROM WorkOrder WO 
+      INNER JOIN Customer CUST ON WO.CustomerID = CUST.CustomerID  
+      INNER JOIN Inspection INSP ON INSP.WONum = WO.WONum 
+      INNER JOIN TimeLineItem TLI ON TLI.WONum = WO.WONum 
+      INNER JOIN Employee EMP ON EMP.EmployeeID = TLI.EmployeeID
+      WHERE CUST.AceID =  @rpCustNum AND INSP.InspectionDate &gt;= DATEADD(d, -3600, GetDate()) 
+           AND INSP.InspectionType IN (@rpInspectionType) 
+           AND INSP.InspectionID IN 
+	(SELECT DISTINCT InspectionID 
+		FROM InspectionEquipment IE 
+		WHERE IE.LocationID IN (@rpServiceLocation))
+      GROUP BY CUST.AceID, CUST.CustomerID, CUST.CustomerName, dbo.InspectionLocationList(INSP.InspectionID), 
+                         WO.Status, WO.WONum, InspectionType,  INSP.InspectionID, INSP.InspectionDate, EMP.Position</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <QueryParameters>
+          <QueryParameter Name="@rpCustNum">
+            <Value>=Parameters!rpCustNum.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@rpInspectionType">
+            <Value>=Parameters!rpInspectionType.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@rpServiceLocation">
+            <Value>=Parameters!rpServiceLocation.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <Timeout>0</Timeout>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="rpCustNum">
+      <DataType>String</DataType>
+      <Prompt>rp Cust Num</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="rpInspectionType">
+      <DataType>String</DataType>
+      <Prompt>rp Inspection Type</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="rpServiceLocation">
+      <DataType>String</DataType>
+      <Prompt>rp Service Location</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

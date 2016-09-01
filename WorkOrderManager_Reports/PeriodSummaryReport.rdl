@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
       <Tablix Name="table1">
@@ -53,7 +53,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox17</rd:DefaultName>
+                      <rd:DefaultName>textbox17</rd:DefaultName>
                       <ZIndex>32</ZIndex>
                       <Style>
                         <TopBorder>
@@ -90,7 +90,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox1</rd:DefaultName>
+                      <rd:DefaultName>textbox1</rd:DefaultName>
                       <ZIndex>31</ZIndex>
                       <Style>
                         <TopBorder>
@@ -124,7 +124,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox2</rd:DefaultName>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
                       <ZIndex>30</ZIndex>
                       <Style>
                         <TopBorder>
@@ -158,7 +158,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox3</rd:DefaultName>
+                      <rd:DefaultName>textbox3</rd:DefaultName>
                       <ZIndex>29</ZIndex>
                       <Style>
                         <TopBorder>
@@ -202,7 +202,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox5</rd:DefaultName>
+                      <rd:DefaultName>textbox5</rd:DefaultName>
                       <ZIndex>28</ZIndex>
                       <Style>
                         <TopBorder>
@@ -245,7 +245,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox6</rd:DefaultName>
+                      <rd:DefaultName>textbox6</rd:DefaultName>
                       <ZIndex>27</ZIndex>
                       <Style>
                         <TopBorder>
@@ -284,7 +284,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox31</rd:DefaultName>
+                      <rd:DefaultName>textbox31</rd:DefaultName>
                       <ZIndex>26</ZIndex>
                       <Style>
                         <TopBorder>
@@ -323,7 +323,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox11</rd:DefaultName>
+                      <rd:DefaultName>textbox11</rd:DefaultName>
                       <ZIndex>25</ZIndex>
                       <Style>
                         <TopBorder>
@@ -366,7 +366,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox13</rd:DefaultName>
+                      <rd:DefaultName>textbox13</rd:DefaultName>
                       <ZIndex>24</ZIndex>
                       <Style>
                         <TopBorder>
@@ -410,7 +410,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox18</rd:DefaultName>
+                      <rd:DefaultName>textbox18</rd:DefaultName>
                       <ZIndex>23</ZIndex>
                       <Style>
                         <Border>
@@ -444,7 +444,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Description</rd:DefaultName>
+                      <rd:DefaultName>Description</rd:DefaultName>
                       <ZIndex>22</ZIndex>
                       <Style>
                         <Border>
@@ -480,7 +480,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">SumMerchAmt3</rd:DefaultName>
+                      <rd:DefaultName>SumMerchAmt3</rd:DefaultName>
                       <ZIndex>21</ZIndex>
                       <Style>
                         <Border>
@@ -514,7 +514,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">SumCostAmt2</rd:DefaultName>
+                      <rd:DefaultName>SumCostAmt2</rd:DefaultName>
                       <ZIndex>20</ZIndex>
                       <Style>
                         <Border>
@@ -550,7 +550,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">TotalHours_1</rd:DefaultName>
+                      <rd:DefaultName>TotalHours_1</rd:DefaultName>
                       <ZIndex>19</ZIndex>
                       <Style>
                         <Border>
@@ -584,7 +584,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox21</rd:DefaultName>
+                      <rd:DefaultName>textbox21</rd:DefaultName>
                       <ZIndex>18</ZIndex>
                       <Style>
                         <Border>
@@ -618,7 +618,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox22</rd:DefaultName>
+                      <rd:DefaultName>textbox22</rd:DefaultName>
                       <ZIndex>17</ZIndex>
                       <Style>
                         <Border>
@@ -653,7 +653,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox23</rd:DefaultName>
+                      <rd:DefaultName>textbox23</rd:DefaultName>
                       <ZIndex>7</ZIndex>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -682,7 +682,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox4</rd:DefaultName>
+                      <rd:DefaultName>textbox4</rd:DefaultName>
                       <ZIndex>6</ZIndex>
                       <Style>
                         <Border>
@@ -714,7 +714,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">WONum</rd:DefaultName>
+                      <rd:DefaultName>WONum</rd:DefaultName>
                       <ZIndex>5</ZIndex>
                       <Style>
                         <Border>
@@ -752,7 +752,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">SumMerchAmt2</rd:DefaultName>
+                      <rd:DefaultName>SumMerchAmt2</rd:DefaultName>
                       <ZIndex>4</ZIndex>
                       <Style>
                         <Border>
@@ -788,7 +788,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">SumCostAmt3</rd:DefaultName>
+                      <rd:DefaultName>SumCostAmt3</rd:DefaultName>
                       <ZIndex>3</ZIndex>
                       <Style>
                         <Border>
@@ -824,7 +824,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">TotalHours</rd:DefaultName>
+                      <rd:DefaultName>TotalHours</rd:DefaultName>
                       <ZIndex>2</ZIndex>
                       <Style>
                         <Border>
@@ -860,7 +860,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">LaborCost</rd:DefaultName>
+                      <rd:DefaultName>LaborCost</rd:DefaultName>
                       <ZIndex>1</ZIndex>
                       <Style>
                         <Border>
@@ -896,7 +896,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Net</rd:DefaultName>
+                      <rd:DefaultName>Net</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -930,7 +930,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox24</rd:DefaultName>
+                      <rd:DefaultName>textbox24</rd:DefaultName>
                       <ZIndex>16</ZIndex>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -957,7 +957,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox7</rd:DefaultName>
+                      <rd:DefaultName>textbox7</rd:DefaultName>
                       <ZIndex>15</ZIndex>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -984,7 +984,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox8</rd:DefaultName>
+                      <rd:DefaultName>textbox8</rd:DefaultName>
                       <ZIndex>14</ZIndex>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1016,7 +1016,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox9</rd:DefaultName>
+                      <rd:DefaultName>textbox9</rd:DefaultName>
                       <ZIndex>13</ZIndex>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1049,7 +1049,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">SumMerchAmt4</rd:DefaultName>
+                      <rd:DefaultName>SumMerchAmt4</rd:DefaultName>
                       <ZIndex>12</ZIndex>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1081,7 +1081,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">SumCostAmt</rd:DefaultName>
+                      <rd:DefaultName>SumCostAmt</rd:DefaultName>
                       <ZIndex>11</ZIndex>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1113,7 +1113,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox34</rd:DefaultName>
+                      <rd:DefaultName>textbox34</rd:DefaultName>
                       <ZIndex>10</ZIndex>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1146,7 +1146,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox14</rd:DefaultName>
+                      <rd:DefaultName>textbox14</rd:DefaultName>
                       <ZIndex>9</ZIndex>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1179,7 +1179,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox16</rd:DefaultName>
+                      <rd:DefaultName>textbox16</rd:DefaultName>
                       <ZIndex>8</ZIndex>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1284,7 +1284,7 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox48</rd:DefaultName>
+        <rd:DefaultName>textbox48</rd:DefaultName>
         <Left>0.01388in</Left>
         <Height>0.25in</Height>
         <Width>3.9375in</Width>
@@ -1338,7 +1338,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox66</rd:DefaultName>
+                      <rd:DefaultName>textbox66</rd:DefaultName>
                       <ZIndex>15</ZIndex>
                       <Style>
                         <Border>
@@ -1380,7 +1380,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox58</rd:DefaultName>
+                      <rd:DefaultName>textbox58</rd:DefaultName>
                       <ZIndex>14</ZIndex>
                       <Style>
                         <Border>
@@ -1414,7 +1414,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox64</rd:DefaultName>
+                      <rd:DefaultName>textbox64</rd:DefaultName>
                       <ZIndex>13</ZIndex>
                       <Style>
                         <Border>
@@ -1448,7 +1448,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox65</rd:DefaultName>
+                      <rd:DefaultName>textbox65</rd:DefaultName>
                       <ZIndex>12</ZIndex>
                       <Style>
                         <Border>
@@ -1482,7 +1482,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox72</rd:DefaultName>
+                      <rd:DefaultName>textbox72</rd:DefaultName>
                       <ZIndex>11</ZIndex>
                       <Style>
                         <Border>
@@ -1516,7 +1516,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox75</rd:DefaultName>
+                      <rd:DefaultName>textbox75</rd:DefaultName>
                       <ZIndex>10</ZIndex>
                       <Style>
                         <Border>
@@ -1553,7 +1553,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Customer</rd:DefaultName>
+                      <rd:DefaultName>Customer</rd:DefaultName>
                       <ZIndex>4</ZIndex>
                       <Style>
                         <Border>
@@ -1588,7 +1588,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">SalesPrice_1</rd:DefaultName>
+                      <rd:DefaultName>SalesPrice_1</rd:DefaultName>
                       <ZIndex>3</ZIndex>
                       <Style>
                         <Border>
@@ -1623,7 +1623,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">COGS_1</rd:DefaultName>
+                      <rd:DefaultName>COGS_1</rd:DefaultName>
                       <ZIndex>2</ZIndex>
                       <Style>
                         <Border>
@@ -1658,7 +1658,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">LaborCost_1</rd:DefaultName>
+                      <rd:DefaultName>LaborCost_1</rd:DefaultName>
                       <ZIndex>1</ZIndex>
                       <Style>
                         <Border>
@@ -1694,7 +1694,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Net_1</rd:DefaultName>
+                      <rd:DefaultName>Net_1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -1732,7 +1732,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox69</rd:DefaultName>
+                      <rd:DefaultName>textbox69</rd:DefaultName>
                       <ZIndex>9</ZIndex>
                       <Style>
                         <Border>
@@ -1768,7 +1768,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">SalesPrice_2</rd:DefaultName>
+                      <rd:DefaultName>SalesPrice_2</rd:DefaultName>
                       <ZIndex>8</ZIndex>
                       <Style>
                         <Border>
@@ -1804,7 +1804,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">COGS_2</rd:DefaultName>
+                      <rd:DefaultName>COGS_2</rd:DefaultName>
                       <ZIndex>7</ZIndex>
                       <Style>
                         <Border>
@@ -1840,7 +1840,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">LaborCost_2</rd:DefaultName>
+                      <rd:DefaultName>LaborCost_2</rd:DefaultName>
                       <ZIndex>6</ZIndex>
                       <Style>
                         <Border>
@@ -1877,7 +1877,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Net_2</rd:DefaultName>
+                      <rd:DefaultName>Net_2</rd:DefaultName>
                       <ZIndex>5</ZIndex>
                       <Style>
                         <Border>
@@ -1958,7 +1958,7 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">PeriodName</rd:DefaultName>
+        <rd:DefaultName>PeriodName</rd:DefaultName>
         <Left>4.45138in</Left>
         <Height>0.25in</Height>
         <Width>3.56251in</Width>
@@ -2369,7 +2369,7 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox15</rd:DefaultName>
+        <rd:DefaultName>textbox15</rd:DefaultName>
         <Top>0.8125in</Top>
         <Left>0.01388in</Left>
         <Height>0.25in</Height>
@@ -2392,7 +2392,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!Expenses.Value, "DataSetGLExpenses")</Value>
+                <Value>=Sum(Fields!SumCostAmt.Value, "JobTypesSummaryDataSet")+Sum(Fields!LaborCost.Value, "JobTypesSummaryDataSet")</Value>
                 <Style>
                   <Format>C</Format>
                 </Style>
@@ -2403,7 +2403,7 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Expenses</rd:DefaultName>
+        <rd:DefaultName>Expenses</rd:DefaultName>
         <Top>0.8125in</Top>
         <Left>2.38888in</Left>
         <Height>0.25in</Height>
@@ -2455,7 +2455,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!Hours.Value, "DataSetGLExpenses")</Value>
+                <Value>=Sum(Fields!TotalHours.Value, "JobTypesSummaryDataSet")</Value>
                 <Style>
                   <Format>N2</Format>
                 </Style>
@@ -2466,7 +2466,7 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Hours</rd:DefaultName>
+        <rd:DefaultName>Hours</rd:DefaultName>
         <Top>1.3875in</Top>
         <Left>2.38888in</Left>
         <Height>0.25in</Height>
@@ -2489,7 +2489,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!Rate.Value, "DataSetGLExpenses")</Value>
+                <Value>=Sum(Fields!LaborCost.Value, "JobTypesSummaryDataSet")/Sum(Fields!TotalHours.Value, "JobTypesSummaryDataSet")</Value>
                 <Style>
                   <Format>C</Format>
                 </Style>
@@ -2500,7 +2500,7 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Rate</rd:DefaultName>
+        <rd:DefaultName>Rate</rd:DefaultName>
         <Top>1.6375in</Top>
         <Left>2.38888in</Left>
         <Height>0.25in</Height>
@@ -2592,7 +2592,7 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">MAHourlyRate</rd:DefaultName>
+        <rd:DefaultName>MAHourlyRate</rd:DefaultName>
         <Top>1.8875in</Top>
         <Left>2.38888in</Left>
         <Height>0.25in</Height>
@@ -3518,7 +3518,7 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox15</rd:DefaultName>
+        <rd:DefaultName>textbox15</rd:DefaultName>
         <Top>0.30556in</Top>
         <Left>0.01388in</Left>
         <Height>0.25in</Height>
@@ -3541,7 +3541,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!Sales.Value, "DataSetGLExpenses")</Value>
+                <Value>=Sum(Fields!SumMerchAmt.Value, "JobTypesSummaryDataSet")</Value>
                 <Style>
                   <Format>C</Format>
                 </Style>
@@ -3552,7 +3552,7 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Expenses</rd:DefaultName>
+        <rd:DefaultName>Expenses</rd:DefaultName>
         <Top>0.30556in</Top>
         <Left>2.38888in</Left>
         <Height>0.25in</Height>
@@ -3582,7 +3582,7 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox15</rd:DefaultName>
+        <rd:DefaultName>textbox15</rd:DefaultName>
         <Top>0.5625in</Top>
         <Left>0.01389in</Left>
         <Height>0.25in</Height>
@@ -3605,7 +3605,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!COGS.Value, "DataSetGLExpenses")</Value>
+                <Value>=Sum(Fields!SumCostAmt.Value, "JobTypesSummaryDataSet")</Value>
                 <Style>
                   <Format>C</Format>
                 </Style>
@@ -3616,7 +3616,7 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Expenses</rd:DefaultName>
+        <rd:DefaultName>Expenses</rd:DefaultName>
         <Top>0.5625in</Top>
         <Left>2.38888in</Left>
         <Height>0.25in</Height>
@@ -3648,7 +3648,7 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">textbox15</rd:DefaultName>
+        <rd:DefaultName>textbox15</rd:DefaultName>
         <Top>1.0625in</Top>
         <Left>0.01389in</Left>
         <Height>0.25in</Height>
@@ -3671,7 +3671,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!Sales.Value, "DataSetGLExpenses") - Sum(Fields!Expenses.Value, "DataSetGLExpenses") - Sum(Fields!COGS.Value, "DataSetGLExpenses")</Value>
+                <Value>=Sum(Fields!SalesPrice.Value, "JobTypesSummaryDataSet")-Sum(Fields!COGS.Value, "JobTypesSummaryDataSet")-Sum(Fields!LaborCost.Value, "JobTypesSummaryDataSet")</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                   <Format>C</Format>
@@ -3683,7 +3683,7 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Expenses</rd:DefaultName>
+        <rd:DefaultName>Expenses</rd:DefaultName>
         <Top>1.0625in</Top>
         <Left>2.38889in</Left>
         <Height>0.25in</Height>
@@ -3717,8 +3717,8 @@
   <DataSources>
     <DataSource Name="AceWOMDataSource">
       <DataSourceReference>AceWOMDataSource</DataSourceReference>
-      <rd:SecurityType xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">None</rd:SecurityType>
-      <rd:DataSourceID xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">66d6b4a8-5724-4257-a1d3-656600d869c2</rd:DataSourceID>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>66d6b4a8-5724-4257-a1d3-656600d869c2</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -3744,55 +3744,55 @@ WHERE        (W.BranchID LIKE @BranchID) AND (P.ProfitabilityPeriodID = @Profita
       <Fields>
         <Field Name="Description">
           <DataField>Description</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="WONum">
           <DataField>WONum</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="WOType">
           <DataField>WOType</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="BranchID">
           <DataField>BranchID</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Customer">
           <DataField>Customer</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="SalesPrice">
           <DataField>SalesPrice</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="COGS">
           <DataField>COGS</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="TotalHours">
           <DataField>TotalHours</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="PeriodName">
           <DataField>PeriodName</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="LaborCost">
           <DataField>LaborCost</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Net">
           <DataField>Net</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="SumMerchAmt">
           <DataField>SumMerchAmt</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="SumCostAmt">
           <DataField>SumCostAmt</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -3820,47 +3820,47 @@ WHERE        (WorkOrder_ProfitLoss.BranchID LIKE @BranchID) AND (ProfitabilityPe
       <Fields>
         <Field Name="Description">
           <DataField>Description</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="WONum">
           <DataField>WONum</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="WOType">
           <DataField>WOType</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="BranchID">
           <DataField>BranchID</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Customer">
           <DataField>Customer</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="SalesPrice">
           <DataField>SalesPrice</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="COGS">
           <DataField>COGS</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="LaborCost">
           <DataField>LaborCost</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="TotalHours">
           <DataField>TotalHours</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="PeriodName">
           <DataField>PeriodName</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Net">
           <DataField>Net</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -3885,19 +3885,19 @@ ORDER BY P.ProfitabilityPeriodID</CommandText>
       <Fields>
         <Field Name="Sales">
           <DataField>Sales</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Cost">
           <DataField>Cost</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="ProfitabilityPeriodID">
           <DataField>ProfitabilityPeriodID</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Int32</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Description">
           <DataField>Description</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -3911,7 +3911,7 @@ WHERE        (GETDATE() &gt;= BeginDate) AND (GETDATE() &lt;= EndDate)</CommandT
       <Fields>
         <Field Name="ProfitabilityPeriodID">
           <DataField>ProfitabilityPeriodID</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Int32</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -3934,27 +3934,27 @@ WHERE        (GLExpenseRate.ProfitabilityPeriodID = @ProfitabilityPeriodID) AND 
       <Fields>
         <Field Name="Hours">
           <DataField>Hours</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Expenses">
           <DataField>Expenses</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Rate">
           <DataField>Rate</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="MAHourlyRate">
           <DataField>MAHourlyRate</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Sales">
           <DataField>Sales</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="COGS">
           <DataField>COGS</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -3979,19 +3979,19 @@ ORDER BY GLExpenseRate.ProfitabilityPeriodID</CommandText>
       <Fields>
         <Field Name="Hours">
           <DataField>Hours</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Expenses">
           <DataField>Expenses</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Rate">
           <DataField>Rate</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Decimal</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="ProfitabilityPeriodID">
           <DataField>ProfitabilityPeriodID</DataField>
-          <rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Int32</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -4008,6 +4008,6 @@ ORDER BY GLExpenseRate.ProfitabilityPeriodID</CommandText>
   </ReportParameters>
   <Language>en-US</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
-  <rd:ReportUnitType xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Inch</rd:ReportUnitType>
-  <rd:ReportID xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">3d54ff43-b8b3-4f36-a929-95f827d96a3e</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>3d54ff43-b8b3-4f36-a929-95f827d96a3e</rd:ReportID>
 </Report>
